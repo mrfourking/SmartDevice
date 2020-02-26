@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+
+  min-width: $min-mobile-width;
+  margin: 0;
+
+  font-family: "ptmono", "Courier New", monospace;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+  font-style: normal;
+  color: $light-text-color;
+
+  //Временно для шапки
+  background-color: $dark-bg-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+  //color: $bg-dark;
+}

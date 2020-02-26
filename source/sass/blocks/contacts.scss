@@ -1,0 +1,27 @@
+.contacts {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 2.6%;
+  margin-left: 50px;
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+  margin-right: 88px;
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  svg {
+    margin-right: 20px;
+  }
+
+  a {
+    line-height: 18px;
+    color: $dark-text-color;
+  }
+}
