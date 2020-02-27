@@ -9,7 +9,7 @@
 .contacts__item {
   display: flex;
   align-items: center;
-  margin-right: 88px;
+  margin-right: 50px;
 
 
   &:last-child {
@@ -23,5 +23,25 @@
   a {
     line-height: 18px;
     color: $dark-text-color;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .contacts {
+    margin: 0;
+  }
+
+  .contacts__item {
+    margin-right: 33px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin: 0;
+    }
+
+    span {
+      display: none;
+    }
   }
 }
