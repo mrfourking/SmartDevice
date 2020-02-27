@@ -2,14 +2,16 @@
   @include reset-list;
   display: flex;
   flex-wrap: wrap;
-  margin-right: 2.6%;
-  margin-left: 50px;
+  justify-content: space-between;
+  width: 430px;
+  margin-right: 3.5%;
+  margin-left: 2.5%;
 }
 
 .contacts__item {
   display: flex;
   align-items: center;
-  margin-right: 50px;
+  // margin-right: 20.3%;
 
 
   &:last-child {
@@ -20,15 +22,25 @@
     margin-right: 20px;
   }
 
+  &:last-child svg {
+    margin-right: 16px;
+  }
+
   a {
+    display: flex;
+
     line-height: 18px;
     color: $dark-text-color;
+
+    @include interactive;
   }
 }
 
 @media (max-width: $tablet-width) {
   .contacts {
+    width: auto;
     margin: 0;
+    margin-top: -4px;
   }
 
   .contacts__item {
@@ -43,5 +55,20 @@
     span {
       display: none;
     }
+
+    &:first-child svg {
+      width: 25px;
+      height: 18px;
+    }
+
+    &:last-child svg {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .contacts__item {
+    margin-right: 24px;
   }
 }
