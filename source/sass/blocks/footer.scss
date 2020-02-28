@@ -8,11 +8,11 @@
 .footer__wrap {
   display: flex;
   width: 100%;
+  padding: 0 13% 0 13.1%;
 }
 
 .footer__logo-wrap {
-  margin-left: 13.1%;
-  margin-right: 10.8%;
+  margin-right: 14.6%;
 }
 
 .footer__logo {
@@ -21,13 +21,8 @@
 
 .footer__menu {
   display: flex;
-  flex-wrap: wrap;
-  width: 26.1%;
-  margin-right: 8.1%;
-
-  & .footer__title {
-    width: 100%;
-  }
+  flex-direction: column;
+  margin-right: auto;
 }
 
 .footer__title {
@@ -41,7 +36,7 @@
 }
 
 .footer__location {
-  margin-right: 13%;
+  margin-right: 5px;
 }
 
 .footer__address {
@@ -75,13 +70,17 @@
 }
 
 .footer__rights {
-  margin-right: 74px;
+  margin-right: 5.2%;
 }
 
 .footer__trademark {
-  margin-right: 141px;
+  margin-right: 9.9%;
 }
 
 .footer__conditions {
-  margin-right: 403px;
+  margin-right: auto;
+}
+
+.footer_developers {
+  margin-right: 5px;
 }

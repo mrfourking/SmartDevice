@@ -1,10 +1,17 @@
 .menu {
   @include reset-list;
 
-  margin-right: 73px;
+  display: inline-block;
+
+  columns: 230px 2;
+  column-gap: 75px;
 }
 
 .menu__item {
+  &--break {
+    break-inside: auto;
+  }
+
   a {
     font-size: 15px;
     line-height: 25px;
