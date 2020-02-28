@@ -1,0 +1,10 @@
+@media (max-width: $mobile-width) {
+  .accordion {
+    display: none;
+
+    &--nojs,
+    &--open {
+      display: block;
+    }
+  }
+}

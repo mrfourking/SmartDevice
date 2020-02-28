@@ -57,9 +57,18 @@
       width: 38px;
       height: 38px;
     }
+
+    &--big img {
+      width: 52px;
+      height: 52px;
+    }
   }
 
   .logo__name {
     display: none;
+
+    &--dark {
+      display: flex;
+    }
   }
 }

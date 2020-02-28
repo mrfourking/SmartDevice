@@ -28,3 +28,9 @@
     columns: 1;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .menu {
+    padding: 5px 33px 26px 15px;
+  }
+}

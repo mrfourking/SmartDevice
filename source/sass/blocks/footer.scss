@@ -47,7 +47,6 @@
 
 .footer__phones {
   @include reset-list;
-
   @include footer-text;
 }
 
@@ -156,5 +155,85 @@
 
   .footer__rights {
     display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .footer__logo-wrap {
+    flex-direction: column;
+    margin: 0;
+    padding: 46px 43px 48px;
+  }
+
+  .footer__logo {
+    margin: 0;
+    margin-bottom: 26px;
+  }
+
+  .footer__title {
+    margin: 0;
+    padding: 29px 15px 27px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 36px;
+
+      width: 16px;
+      height: 1px;
+
+      background-color: $footer-accordion-color;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &--active::after {
+      display: none;
+    }
+  }
+
+  .footer__menu {
+    position: relative;
+    width: 100%;
+    margin: 0;
+
+    border-bottom: 1px solid rgba($footer-border-color, 0.2);
+  }
+
+  .footer__location {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer__location-wrap {
+    padding: 5px 33px 26px 15px;
+  }
+
+  .footer__copyright {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 28px;
+  }
+
+  .footer__trademark {
+    &--logo {
+      margin: 0;
+      margin-bottom: 31px;
+    }
+  }
+
+  .footer__conditions {
+    margin: 0;
+    margin-bottom: 21px;
+  }
+
+  .footer_developers {
+    margin: 0;
   }
 }
