@@ -1,0 +1,15 @@
+.menu {
+  @include reset-list;
+
+  margin-right: 73px;
+}
+
+.menu__item {
+  a {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    color: $footer-text-color;
+    opacity: 0.5;
+  }
+}

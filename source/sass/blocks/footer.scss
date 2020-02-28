@@ -1,0 +1,87 @@
+.footer {
+  width: 100%;
+  padding-top: 65px;
+
+  background-color: $footer-bg-color;
+}
+
+.footer__wrap {
+  display: flex;
+  width: 100%;
+}
+
+.footer__logo-wrap {
+  margin-left: 13.1%;
+  margin-right: 10.8%;
+}
+
+.footer__logo {
+  margin-bottom: 53px;
+}
+
+.footer__menu {
+  display: flex;
+  flex-wrap: wrap;
+  width: 26.1%;
+  margin-right: 8.1%;
+
+  & .footer__title {
+    width: 100%;
+  }
+}
+
+.footer__title {
+  margin: 0;
+  margin-bottom: 25px;
+
+  @include roboto-condenced(400, 15px, 16px);
+  text-transform: uppercase;
+  color: $footer-text-color;
+  letter-spacing: 0.05em;
+}
+
+.footer__location {
+  margin-right: 13%;
+}
+
+.footer__address {
+  margin: 0;
+
+  @include footer-text;
+}
+
+.footer__phones {
+  @include reset-list;
+
+  @include footer-text;
+}
+
+.footer__copyright {
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+  padding: 13px 13%;
+
+  @include footer-text;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+
+  border-top: 1px solid $copyright-border-color;
+
+  a {
+    font-weight: 400;
+    color: $footer-text-color;
+  }
+}
+
+.footer__rights {
+  margin-right: 74px;
+}
+
+.footer__trademark {
+  margin-right: 141px;
+}
+
+.footer__conditions {
+  margin-right: 403px;
+}

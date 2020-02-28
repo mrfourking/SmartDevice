@@ -1,0 +1,13 @@
+.social {
+  @include reset-list;
+
+  display: flex;
+}
+
+.social__item {
+  margin-right: 16px;
+}
+
+.social__link {
+  @include interactive;
+}

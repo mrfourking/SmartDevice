@@ -31,4 +31,34 @@
     font-weight: 400;
     color: $header-logo-color;
   }
+
+  &--dark span:first-child {
+    color: $footer-logo-color;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .logo {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  .logo__name {
+    span:first-child {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .logo {
+    img {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  .logo__name {
+    display: none;
+  }
 }

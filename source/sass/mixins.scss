@@ -11,6 +11,15 @@
   font-weight: $weight;
 }
 
+@mixin footer-text {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  color: $footer-text-color;
+
+  opacity: 0.5;
+}
+
 @mixin interactive {
   &:hover {
     opacity: 0.6;
