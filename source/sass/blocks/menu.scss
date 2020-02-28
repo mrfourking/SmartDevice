@@ -18,5 +18,13 @@
     font-weight: 400;
     color: $footer-text-color;
     opacity: 0.5;
+
+    @include interactive;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .menu {
+    columns: 1;
   }
 }

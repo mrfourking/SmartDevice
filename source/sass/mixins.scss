@@ -15,19 +15,17 @@
   font-size: 15px;
   line-height: 25px;
   font-weight: 400;
-  color: $footer-text-color;
-
-  opacity: 0.5;
+  color: rgba($footer-text-color, 0.5);
 }
 
 @mixin interactive {
   &:hover {
-    opacity: 0.6;
+    opacity: 0.3;
     transition: opacity 0.2s ease;
   }
 
   &:active {
-    opacity: 0.3;
+    opacity: 0.1;
     transition: opacity 0.2s ease;
   }
 }

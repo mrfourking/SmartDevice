@@ -6,6 +6,10 @@
 
 .social__item {
   margin-right: 16px;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .social__link {
