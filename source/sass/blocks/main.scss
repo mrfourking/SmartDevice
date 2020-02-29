@@ -13,7 +13,7 @@
     url("../img/polygon-start-desktop.png"),
     url("../img/start-bg-desktop.png");
   background-repeat: no-repeat;
-  background-position: 85.4% 258px, 0 0, 0 0;
+  background-position: 85.4% 258px, 0 -69px, 0 0;
 }
 
 .main__title {
@@ -133,7 +133,7 @@
   }
 
   .main__title {
-    width: 50%;
+    width: auto;
     margin-bottom: 28px;
 
     @include roboto-condenced(700, 40px, 47px);
