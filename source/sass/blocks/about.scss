@@ -37,3 +37,55 @@
   border: 1px solid $advantages-item-color;
   border-radius: 5px;
 }
+
+@media (max-width: $tablet-width) {
+  .about {
+    padding: 25px 2.6% 83px 27.3%;
+
+    background-image: url("../img/about-bg-tablet.png");
+    background-position: 0 24px;
+    background-size: auto;
+  }
+
+  .about__title {
+    margin-bottom: 26px;
+
+    @include roboto-condenced(400, 32px, 45px);
+  }
+
+  .about__content {
+    margin-left: 3px;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    &--big-margin {
+      margin-bottom: 43px;
+    }
+  }
+
+  .about__button {
+    margin-left: 2px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .about {
+    padding: 42px 4.3% 65px;
+    background-image: none;
+  }
+
+  .about__title {
+    margin-bottom: 22px;
+
+    @include roboto-condenced(400, 28px, 39px);
+  }
+
+  .about__content {
+    margin-bottom: 42px;
+
+    &--big-margin {
+      margin-bottom: 31px;
+    }
+  }
+}

@@ -31,3 +31,21 @@
     item.addEventListener('click', onAccordionClick(item));
   });
 })();
+
+(function () {
+  var TABLET_WIDTH = 1023;
+  var STRING_LENGTH = 200;
+  var END_CHARACTER = '..';
+
+  var contentBlocks = document.querySelectorAll('.about__content');
+
+  if (document.body.clientWidth <= TABLET_WIDTH) {
+    contentBlocks.forEach(function (item) {
+      var content = item.innerText;
+
+      if (content.length > STRING_LENGTH) {
+        item.innerText = content.substr(0, STRING_LENGTH) + END_CHARACTER;
+      }
+    });
+  }
+})();
