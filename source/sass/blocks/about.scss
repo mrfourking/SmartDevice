@@ -36,6 +36,8 @@
 
   border: 1px solid $advantages-item-color;
   border-radius: 5px;
+
+  @include interactive;
 }
 
 @media (max-width: $tablet-width) {

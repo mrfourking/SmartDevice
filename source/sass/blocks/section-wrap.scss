@@ -1,0 +1,21 @@
+.section-wrap {
+  background-color: $light-bg-color;
+  background-image: url("../img/polygon-advantages-desktop.png");
+  background-repeat: no-repeat;
+  background-position: 0 -29px;
+  background-size: cover;
+}
+
+@media (max-width: $tablet-width) {
+  .section-wrap {
+    background-image: url("../img/polygon-advantages-tablet.png");
+    background-position: 210px 90px;
+    background-size: auto;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .section-wrap {
+    background-position: -120px 650px;
+  }
+}
