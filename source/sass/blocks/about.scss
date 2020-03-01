@@ -1,0 +1,39 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 73px 19.8% 110px 28.9%;
+
+  background-image: url("../img/about-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: 20.3% 80px;
+  background-size: 11.45% auto;
+}
+
+.about__title {
+  margin: 0;
+  margin-bottom: 24px;
+
+  @include roboto-condenced(400, 36px, 51px);
+}
+
+.about__content {
+  margin: 0;
+  margin-bottom: 21px;
+
+  &--big-margin {
+    margin-bottom: 40px;
+  }
+}
+
+.about__button {
+  padding: 14px 50px 13px;
+
+  @include roboto-condenced(700, 14px, 16px);
+  color: $advantages-item-color;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  border: 1px solid $advantages-item-color;
+  border-radius: 5px;
+}
