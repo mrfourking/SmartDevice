@@ -71,6 +71,10 @@
 @media (max-width: $mobile-width) {
   .card {
     padding: 22px 22px 26px 24px;
+
+    &--padding {
+      padding: 22px 16px 26px 24px;
+    }
   }
 
   .card__icon {
