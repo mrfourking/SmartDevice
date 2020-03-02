@@ -205,10 +205,10 @@
       <div class="callback__form callback-form">
         <p class="callback-form__title">Остались вопросы? Задайте их нам!</p>
         <p class="callback-form__intro">Мы проконсультируем Вас бесплатно</p>
-        <form class="callback-form__form" method="POST" action="#">
+        <form class="callback-form__form" method="POST" action="https://echo.htmlacademy.ru">
           <input class="callback-form__input" type="text" name="name" id="name" placeholder="Имя" required="">
           <label class="visually-hidden" for="name">Имя</label>
-          <input class="callback-form__input callback-form__input--no-margin" type="text" name="phone" id="phone" placeholder="Телефон" required="">
+          <input class="callback-form__input callback-form__input--no-margin" type="tel" name="phone" id="phone" placeholder="Телефон" required="">
           <label class="visually-hidden" for="phone">Телефон</label>
           <textarea class="callback-form__textarea" name="question" id="question" placeholder="Ваш вопрос" required=""></textarea>
           <label class="visually-hidden" for="question">Ваш вопрос</label>
@@ -310,6 +310,8 @@
       <span class="footer_developers">Developed by wow studio</span>
     </div>
   </footer>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery.inputmask.js"></script>
   <script src="js/main.js"></script>
 </body>
 
