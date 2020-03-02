@@ -29,3 +29,15 @@
     transition: opacity 0.2s ease;
   }
 }
+
+@mixin form-interactive {
+  &:hover {
+    background-color: rgba($light-bg-color, 0.5);
+    transition: background-color 0.2s ease;
+  }
+
+  &:focus {
+    background-color: rgba($light-bg-color, 0.3);
+    transition: background-color 0.2s ease;
+  }
+}

@@ -157,7 +157,7 @@
             <picture>
               <source media="(max-width: 767px)" srcset="img/product-1-mobile.png">
               <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png">
-              <img class="products__image" src="img/product-1-desktop.png">
+              <img class="products__image" src="img/product-1-desktop.png" width="370" height="620" alt="Производство печатных плат">
             </picture>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +172,7 @@
             <picture>
               <source media="(max-width: 767px)" srcset="img/product-2-mobile.png">
               <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png">
-              <img class="products__image" src="img/product-2-desktop.png">
+              <img class="products__image" src="img/product-2-desktop.png" width="370" height="620" alt="Монтаж печатных плат">
             </picture>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -187,7 +187,7 @@
             <picture>
               <source media="(max-width: 767px)" srcset="img/product-3-mobile.png">
               <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png">
-              <img class="products__image" src="img/product-3-desktop.png">
+              <img class="products__image" src="img/product-3-desktop.png" width="370" height="620" alt="Комплектующие для светотехники">
             </picture>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,7 +198,28 @@
         </li>
       </ul>
     </section>
+
+    <section class="callback">
+      <h2 class="visually-hidden">Форма обратной связи</h2>
+      <img class="callback__image" src="img/plane.png" width="511" height="228" alt="Бумажный самолётик">
+      <div class="callback__form callback-form">
+        <p class="callback-form__title">Остались вопросы? Задайте их нам!</p>
+        <p class="callback-form__intro">Мы проконсультируем Вас бесплатно</p>
+        <form class="callback-form__form" method="POST" action="#">
+          <input class="callback-form__input" type="text" name="name" id="name" placeholder="Имя" required="">
+          <label class="visually-hidden" for="name">Имя</label>
+          <input class="callback-form__input callback-form__input--no-margin" type="text" name="phone" id="phone" placeholder="Телефон" required="">
+          <label class="visually-hidden" for="phone">Телефон</label>
+          <textarea class="callback-form__textarea" name="question" id="question" placeholder="Ваш вопрос" required=""></textarea>
+          <label class="visually-hidden" for="question">Ваш вопрос</label>
+          <button class="callback-form__button" type="submit">Задать вопрос</button>
+          <input class="callback-form__argeement-checkbox visually-hidden" type="checkbox" name="agreement" id="agreement" checked="">
+          <label class="callback-form__argeement" for="agreement">Я согласен на обработку персональных данных</label>
+        </form>
+      </div>
+    </section>
   </main>
+
   <footer class="footer">
     <div class="footer__wrap">
       <div class="footer__logo-wrap">

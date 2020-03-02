@@ -1,0 +1,43 @@
+.callback {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 88px;
+  padding-bottom: 113px;
+
+  color: $dark-text-color;
+
+  background-color: $form-bg-color;
+  background-image: url("../img/polygon-form-desktop.png");
+  background-repeat: no-repeat;
+  background-position: 175px -60px;
+}
+
+.callback__image {
+  width: 26.6%;
+  margin-top: 71px;
+  margin-right: 110px;
+  margin-left: auto;
+}
+
+.callback__form {
+  margin-right: auto;
+}
+
+@media (max-width: $tablet-width) {
+  .callback {
+    padding-top: 78px;
+    padding-bottom: 103px;
+    background-image: none;
+  }
+
+  .callback__image {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .callback {
+    padding-top: 29px;
+    padding-bottom: 42px;
+  }
+}
