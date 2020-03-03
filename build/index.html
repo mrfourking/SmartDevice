@@ -68,7 +68,11 @@
         </a>
         <a class="main__link" href="#about">Скролл вниз</a>
       </div>
-      <img class="main__image" src="img/board-desktop.png" width="705" height="515" alt="Печатные платы">
+      <picture>
+        <source type="image/webp" srcset="img/board-desktop.webp 1x, img/board-desktop@2x.webp 2x">
+        <img class="main__image" src="img/board-desktop.png" srcset="img/board-desktop@2x.png 2x" width="705" height="515" alt="Печатные платы">
+        <!--Не ретина : 705 х 515; Ретина: 1410 х 1030 -->
+      </picture>
     </section>
 
     <div class="section-wrap">
@@ -156,9 +160,13 @@
           <a class="products__link">
             <h3 class="products__item-title">Производство печатных плат</h3>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/product-1-mobile.png">
-              <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png">
-              <img class="products__image" src="img/product-1-desktop.png" width="370" height="620" alt="Производство печатных плат">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/product-1-mobile.webp 1x, img/product-1-desktop@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/product-1-tablet.webp 1x, img/product-1-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/product-1-desktop.webp 1x, img/product-1-desktop@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/product-1-mobile.png 1x, img/product-1-desktop@2x.png 2x">
+              <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png 1x, img/product-1-tablet@2x.png 2x">
+              <img class="products__image" src="img/product-1-desktop.png" srcset="img/product-1-desktop@2x.png 2x" width="370" height="620" alt="Производство печатных плат">
+              <!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
             </picture>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -171,9 +179,13 @@
           <a class="products__link">
             <h3 class="products__item-title">Монтаж печатных плат</h3>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/product-2-mobile.png">
-              <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png">
-              <img class="products__image" src="img/product-2-desktop.png" width="370" height="620" alt="Монтаж печатных плат">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/product-2-mobile.webp 1x, img/product-2-desktop@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/product-2-tablet.webp 1x, img/product-2-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/product-2-desktop.webp 1x, img/product-2-desktop@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/product-2-mobile.png 1x, img/product-2-desktop@2x.png 2x">
+              <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png 1x, img/product-2-tablet@2x.png 2x">
+              <img class="products__image" src="img/product-2-desktop.png" srcset="img/product-2-desktop@2x.png 2x" width="370" height="620" alt="Монтаж печатных плат">
+              <!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
             </picture>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -186,9 +198,13 @@
           <a class="products__link">
             <h3 class="products__item-title">Комплектующие<br> для светотехники</h3>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/product-3-mobile.png">
-              <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png">
-              <img class="products__image" src="img/product-3-desktop.png" width="370" height="620" alt="Комплектующие для светотехники">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/product-3-mobile.webp 1x, img/product-3-desktop@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/product-3-tablet.webp 1x, img/product-3-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/product-3-desktop.webp 1x, img/product-3-desktop@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/product-3-mobile.png 1x, img/product-3-desktop@2x.png 2x">
+              <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png 1x, img/product-3-tablet@2x.png 2x">
+              <img class="products__image" src="img/product-3-desktop.png" srcset="img/product-3-desktop@2x.png 2x" width="370" height="620" alt="Комплектующие для светотехники">
+              <!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
             </picture>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,7 +218,13 @@
 
     <section class="callback" id="callback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <img class="callback__image" src="img/plane.png" width="511" height="228" alt="Бумажный самолётик">
+      <div class="callback__image-wrap">
+        <picture>
+          <source type="image/webp" srcset="img/plane.webp 1x, img/plane@2x.webp 2x">
+          <img class="callback__image" src="img/plane.png" srcset="img/plane@2x.png 2x" width="511" height="228" alt="Бумажный самолётик">
+          <!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
+        </picture>
+      </div>
       <div class="callback__form callback-form">
         <p class="callback-form__title">Остались вопросы? Задайте их нам!</p>
         <p class="callback-form__intro">Мы проконсультируем Вас бесплатно</p>
@@ -325,7 +347,8 @@
       <label class="visually-hidden" for="question-modal">Ваш вопрос</label>
       <button class="callback-form__button callback-form__button--modal" type="submit">Отправить</button>
       <input class="callback-form__argeement-checkbox visually-hidden" type="checkbox" name="agreement" id="agreement-modal" checked="">
-      <label class="callback-form__argeement callback-form__argeement--modal" for="agreement-modal">Я согласен на обработку
+      <label class="callback-form__argeement callback-form__argeement--modal" for="agreement-modal">Я согласен на
+        обработку
         персональных данных</label>
       <button class="callback-form__button-close" type="button">
         <span class="visually-hidden">Закрыть окно</span>

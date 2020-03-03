@@ -7,12 +7,17 @@
   color: $dark-text-color;
 
   background-color: $form-bg-color;
-  background-image: url("../img/polygon-form-desktop.png");
+  background-image: url("../../img/polygon-form-desktop.png");
   background-repeat: no-repeat;
   background-position: 175px -60px;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/polygon-form-desktop@2x.png");
+  }
 }
 
-.callback__image {
+.callback__image-wrap {
   width: 26.6%;
   margin-top: 71px;
   margin-right: 110px;

@@ -4,6 +4,11 @@
   background-repeat: no-repeat;
   background-position: 0 -29px;
   background-size: cover;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/polygon-advantages-desktop@2x.png");
+  }
 }
 
 @media (max-width: $tablet-width) {
@@ -11,6 +16,11 @@
     background-image: url("../img/polygon-advantages-tablet.png");
     background-position: 210px 90px;
     background-size: auto;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/polygon-advantages-tablet@2x.png");
+    }
   }
 }
 

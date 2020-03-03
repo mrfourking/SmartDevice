@@ -8,6 +8,11 @@
   background-repeat: no-repeat;
   background-position: 20.3% 80px;
   background-size: 11.45% auto;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/about-bg-desktop@2x.png");
+  }
 }
 
 .about__title {
@@ -48,6 +53,11 @@
     background-image: url("../img/about-bg-tablet.png");
     background-position: 0 24px;
     background-size: auto;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/about-bg-tablet@2x.png");
+    }
   }
 
   .about__title {
