@@ -149,3 +149,36 @@
     onModalButtonsClick();
   });
 })();
+
+(function () {
+  var mainBlock = document.querySelector('.main');
+  var links = mainBlock.querySelectorAll('a[href*="#"]');
+  var framesCount = 20;
+  var animationTime = 300;
+
+  var scrollBlock = function (coord) {
+    var scrollBy = coord / framesCount;
+
+    if (scrollBy > window.pageYOffset - coord && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+      window.scrollBy(0, scrollBy);
+    } else {
+      window.scrollTo(0, coord);
+      clearInterval(window.scroller);
+    }
+  };
+
+  var intervalCallback = function (coord) {
+    return function () {
+      scrollBlock(coord);
+    };
+  };
+
+  links.forEach(function (item) {
+    item.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+
+      window.scroller = setInterval(intervalCallback(coordY), animationTime / framesCount);
+    });
+  });
+})();
