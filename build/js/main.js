@@ -54,4 +54,8 @@
   $(function () {
     $('#phone').inputmask('+7(9{3})9{3}-9{2}-9{2}', {jitMasking: 3});
   });
+
+  $(function () {
+    $('#phone-modal').inputmask('+7(9{3})9{3}-9{2}-9{2}', {jitMasking: 3});
+  });
 })();

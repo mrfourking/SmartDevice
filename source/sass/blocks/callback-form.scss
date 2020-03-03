@@ -4,6 +4,21 @@
   align-items: flex-start;
   flex-shrink: 0;
   width: 575px;
+
+  &--modal {
+
+    position: absolute;
+    top: 136px;
+    left: 50%;
+    margin-left: -245px;
+
+    width: 490px;
+    padding: 30px 39px 36px;
+
+    color: $dark-text-color;
+
+    background-color: $form-bg-color;
+  }
 }
 
 .callback-form__title {
@@ -11,6 +26,12 @@
   margin-bottom: 10px;
 
   @include roboto-condenced(400, 36px, 51px);
+
+  &--modal {
+    margin-bottom: 13px;
+
+    @include roboto-condenced(400, 28px, 39px);
+  }
 }
 
 .callback-form__intro {
@@ -18,6 +39,12 @@
 
   font-size: 16px;
   line-height: 22px;
+
+  &--modal {
+    margin: 0;
+    margin-bottom: 31px;
+    padding-right: 20px;
+  }
 }
 
 .callback-form__form {
@@ -25,6 +52,13 @@
   flex-wrap: wrap;
   color: $dark-text-color;
   padding-left: 5px;
+
+  &--modal {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 0;
+  }
 }
 
 .callback-form__input {
@@ -50,6 +84,13 @@
   &--no-margin {
     margin-right: 0;
   }
+
+  &--modal {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    padding: 14px 24px 16px;
+  }
 }
 
 .callback-form__textarea {
@@ -73,6 +114,12 @@
   &::placeholder {
     color: $dark-text-color;
   }
+
+  &--modal {
+    min-height: 104px;
+    margin-bottom: 33px;
+    padding: 13px 24px;
+  }
 }
 
 .callback-form__button {
@@ -91,6 +138,12 @@
   border-radius: 5px;
 
   @include form-interactive;
+
+  &--modal {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 34px;
+  }
 }
 
 .callback-form__argeement {
@@ -103,6 +156,12 @@
   line-height: 16px;
 
   color: rgba($light-bg-color, 0.8);
+
+  &--modal {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 49px;
+  }
 
   &::before {
     content: "";
@@ -131,6 +190,21 @@
   background-image: url("../img/icon-check.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+
+.callback-form__button-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: transparent;
+
+  border: none;
+
+  @include interactive;
 }
 
 @media (max-width: $tablet-width) {
