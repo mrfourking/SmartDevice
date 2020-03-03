@@ -87,6 +87,7 @@
 
   var closeModal = function () {
     modal.classList.remove('modal--open');
+    document.body.classList.remove('scroll-hidden');
 
     document.removeEventListener('keydown', onModalKeydown);
     document.removeEventListener('click', onRandomAreaClick);
@@ -108,13 +109,6 @@
     }
   };
 
-  // var on = function (evt) {
-  //   var innerSuccessBlock = window.render.mainBlock.querySelector('.success__inner');
-  //   if (evt.target !== innerSuccessBlock && !(innerSuccessBlock.contains(evt.target))) {
-  //     closeSuccessBlock();
-  //   }
-  // };
-
   var onRandomAreaClick = function (evt) {
     if (evt.target !== modal && !(modal.contains(evt.target))) {
       closeModal();
@@ -127,6 +121,7 @@
     evt.stopPropagation();
 
     modal.classList.add('modal--open');
+    document.body.classList.add('scroll-hidden');
     userName.focus();
 
     if (isStorageSupport) {
@@ -153,11 +148,11 @@
 (function () {
   var mainBlock = document.querySelector('.main');
   var links = mainBlock.querySelectorAll('a[href*="#"]');
-  var framesCount = 20;
-  var animationTime = 300;
+  var FRAME_COUNT = 20;
+  var ANIMATION_TIME = 300;
 
   var scrollBlock = function (coord) {
-    var scrollBy = coord / framesCount;
+    var scrollBy = coord / FRAME_COUNT;
 
     if (scrollBy > window.pageYOffset - coord && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
       window.scrollBy(0, scrollBy);
@@ -178,7 +173,7 @@
       evt.preventDefault();
       var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
 
-      window.scroller = setInterval(intervalCallback(coordY), animationTime / framesCount);
+      window.scroller = setInterval(intervalCallback(coordY), ANIMATION_TIME / FRAME_COUNT);
     });
   });
 })();
