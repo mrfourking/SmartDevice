@@ -22,11 +22,16 @@
   @include reset-list;
 
   margin: 0 auto;
+  padding: 0 15px;
 
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .products__item {
+  width: 30%;
   margin-right: 30px;
 
   &:nth-child(3n) {
@@ -45,7 +50,7 @@
 
 .products__item-title {
   z-index: 1;
-  width: 45%;
+  width: 150px;
   margin: 67px 0 0 44px;
 
   @include roboto-condenced(400, 20px, 30px);
@@ -55,6 +60,7 @@
   margin-top: -108px;
 
   img {
+    width: 100%;
     display: block;
   }
 }
@@ -85,9 +91,11 @@
 
   .products__list {
     flex-direction: column;
+    width: auto;
   }
 
   .products__item {
+    width: 100%;
     margin: 0;
     margin-bottom: 46px;
 
