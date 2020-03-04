@@ -2,6 +2,7 @@
   display: flex;
   align-items: flex-start;
   padding-top: 88px;
+  padding-right: 25px;
   padding-bottom: 113px;
 
   color: $dark-text-color;
@@ -18,10 +19,14 @@
 }
 
 .callback__image-wrap {
-  width: 26.6%;
+  width: 27%;
   margin-top: 71px;
   margin-right: 110px;
   margin-left: auto;
+
+  img {
+    display: block;
+  }
 }
 
 .callback__form {
@@ -30,12 +35,13 @@
 
 @media (max-width: $tablet-width) {
   .callback {
+    padding: 0;
     padding-top: 78px;
     padding-bottom: 103px;
     background-image: none;
   }
 
-  .callback__image {
+  .callback__image-wrap {
     display: none;
   }
 }

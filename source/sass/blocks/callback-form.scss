@@ -5,6 +5,8 @@
   flex-shrink: 0;
   width: 575px;
 
+
+
   &--modal {
 
     position: absolute;
@@ -18,6 +20,174 @@
     color: $dark-text-color;
 
     background-color: $form-bg-color;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 5px;
+
+    color: $dark-text-color;
+  }
+
+  &--modal form {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  input[type="text"],
+  input[type="tel"] {
+    flex-grow: 1;
+    margin-right: 31px;
+    margin-bottom: 40px;
+    padding: 14px 16px;
+
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+
+    background-color: rgba($light-bg-color, 0.1);
+
+    border: none;
+
+    @include form-interactive;
+  }
+
+  input[type="tel"] {
+    margin-right: 0;
+  }
+
+  input[type="text"]::placeholder,
+  input[type="tel"]::placeholder {
+    color: $dark-text-color;
+  }
+
+  &--modal input[type="text"],
+  &--modal input[type="tel"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    padding: 14px 24px 16px;
+  }
+
+  input[type="text"]+label,
+  input[type="tel"]+label,
+  textarea+label,
+  input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  textarea {
+    overflow: auto;
+    resize: none;
+    width: 100%;
+    min-height: 154px;
+    margin-bottom: 43px;
+    padding: 13px 16px;
+
+    font-size: 16px;
+    line-height: 22px;
+    color: $dark-text-color;
+
+    background-color: rgba($light-bg-color, 0.1);
+
+    border: none;
+
+    @include form-interactive;
+  }
+
+  textarea::placeholder {
+    color: $dark-text-color;
+  }
+
+  &--modal textarea {
+    min-height: 104px;
+    margin-bottom: 33px;
+    padding: 13px 24px;
+  }
+
+  button[type="submit"] {
+    margin-right: 38px;
+    padding: 14px 78px;
+
+    @include roboto-condenced(700, 14px, 16px);
+    color: $dark-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    background-color: transparent;
+
+    border: 1px solid $dark-text-color;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    @include form-interactive;
+  }
+
+  &--modal button[type="submit"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 34px;
+  }
+
+  input[type="checkbox"]+label {
+    position: relative;
+    align-self: center;
+    width: 40%;
+    padding-left: 33px;
+
+    font-size: 14px;
+    line-height: 16px;
+
+    color: rgba($light-bg-color, 0.8);
+  }
+
+  &--modal input[type="checkbox"]+label {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 49px;
+  }
+
+  input[type="checkbox"]+label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 1px;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1px solid $dark-text-color;
+
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]+label:hover::before {
+    background-color: rgba($light-bg-color, 0.5);
+    transition: background-color 0.2s ease;
+  }
+
+  input[type="checkbox"]+label:active::before {
+    background-color: rgba($light-bg-color, 0.3);
+    transition: background-color 0.2s ease;
+  }
+
+  input[type="checkbox"]:checked+label::before {
+    background-image: url("../img/icon-check.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
 }
 
@@ -47,153 +217,6 @@
   }
 }
 
-.callback-form__form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding-left: 5px;
-
-  color: $dark-text-color;
-
-  &--modal {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding-left: 0;
-  }
-}
-
-.callback-form__input {
-  flex-grow: 1;
-  margin-right: 31px;
-  margin-bottom: 40px;
-  padding: 14px 16px;
-
-  font-size: 16px;
-  line-height: 22px;
-  color: #ffffff;
-
-  background-color: rgba($light-bg-color, 0.1);
-
-  border: none;
-
-  @include form-interactive;
-
-  &::placeholder {
-    color: $dark-text-color;
-  }
-
-  &--no-margin {
-    margin-right: 0;
-  }
-
-  &--modal {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 30px;
-    padding: 14px 24px 16px;
-  }
-}
-
-.callback-form__textarea {
-  overflow: auto;
-  resize: none;
-  width: 100%;
-  min-height: 154px;
-  margin-bottom: 43px;
-  padding: 13px 16px;
-
-  font-size: 16px;
-  line-height: 22px;
-  color: $dark-text-color;
-
-  background-color: rgba($light-bg-color, 0.1);
-
-  border: none;
-
-  @include form-interactive;
-
-  &::placeholder {
-    color: $dark-text-color;
-  }
-
-  &--modal {
-    min-height: 104px;
-    margin-bottom: 33px;
-    padding: 13px 24px;
-  }
-}
-
-.callback-form__button {
-  margin-right: 38px;
-  padding: 14px 78px;
-
-  @include roboto-condenced(700, 14px, 16px);
-  color: $dark-text-color;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  text-align: center;
-
-  background-color: transparent;
-
-  border: 1px solid $dark-text-color;
-  border-radius: 5px;
-
-  @include form-interactive;
-
-  &--modal {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 34px;
-  }
-}
-
-.callback-form__argeement {
-  position: relative;
-  align-self: center;
-  width: 40%;
-  padding-left: 33px;
-
-  font-size: 14px;
-  line-height: 16px;
-
-  color: rgba($light-bg-color, 0.8);
-
-  &--modal {
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 49px;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 1px;
-
-    width: 16px;
-    height: 16px;
-
-    border: 1px solid $dark-text-color;
-  }
-
-  &:hover::before {
-    background-color: rgba($light-bg-color, 0.5);
-    transition: background-color 0.2s ease;
-  }
-
-  &:active::before {
-    background-color: rgba($light-bg-color, 0.3);
-    transition: background-color 0.2s ease;
-  }
-}
-
-.callback-form__argeement-checkbox:checked + .callback-form__argeement::before {
-  background-image: url("../img/icon-check.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
 .callback-form__button-close {
   position: absolute;
   top: 20px;
@@ -213,6 +236,27 @@
   .callback-form {
     width: 595px;
     margin: 0 auto;
+
+    input[type="text"],
+    input[type="tel"] {
+      margin-right: 35px;
+      margin-bottom: 42px;
+      padding: 15px 16px;
+    }
+
+    input[type="tel"] {
+      margin-right: 0;
+    }
+
+    textarea {
+      min-height: 160px;
+      margin-bottom: 46px;
+    }
+
+    button[type="submit"] {
+      margin-right: 40px;
+      padding: 14px 84px 14px 83px;
+    }
   }
 
   .callback-form__title {
@@ -226,32 +270,38 @@
     margin-bottom: 53px;
     margin-left: 5px;
   }
-
-  .callback-form__input {
-    margin-right: 35px;
-    margin-bottom: 42px;
-    padding: 15px 16px;
-
-    &--no-margin {
-      margin-right: 0;
-    }
-  }
-
-  .callback-form__textarea {
-    min-height: 160px;
-    margin-bottom: 46px;
-  }
-
-  .callback-form__button {
-    margin-right: 40px;
-    padding: 14px 84px 14px 83px;
-  }
 }
 
 @media (max-width: $mobile-width) {
   .callback-form {
     width: 100%;
     padding: 0 15px;
+
+    form {
+      padding: 0;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    textarea {
+      min-height: 104px;
+      margin-bottom: 32px;
+    }
+
+    button[type="submit"] {
+      margin: 0;
+      margin-bottom: 30px;
+      padding: 14px 89px 15px;
+    }
+
+    input[type="checkbox"]+label {
+      width: 100%;
+    }
   }
 
   .callback-form__title {
@@ -263,30 +313,5 @@
   .callback-form__intro {
     margin: 0;
     margin-bottom: 26px;
-  }
-
-  .callback-form__form {
-    padding: 0;
-  }
-
-  .callback-form__input {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 30px;
-  }
-
-  .callback-form__textarea {
-    min-height: 104px;
-    margin-bottom: 32px;
-  }
-
-  .callback-form__button {
-    margin: 0;
-    margin-bottom: 30px;
-    padding: 14px 89px 15px;
-  }
-
-  .callback-form__argeement {
-    width: 100%;
   }
 }

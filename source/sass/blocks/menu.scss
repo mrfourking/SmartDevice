@@ -2,12 +2,13 @@
   @include reset-list;
 
   display: inline-block;
-
   columns: 230px 2;
   column-gap: 75px;
 }
 
 .menu__item {
+  vertical-align: baseline;
+
   &--break {
     break-inside: auto;
   }

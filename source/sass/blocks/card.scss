@@ -28,6 +28,11 @@
   &:hover .card__title {
     color: $dark-text-color;
   }
+
+  p {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .card__icon {
@@ -43,11 +48,6 @@
 
   @include roboto-condenced(400, 24px, 34px);
   color: $advantages-item-color;
-}
-
-.card__content {
-  width: 100%;
-  margin: 0;
 }
 
 @media (max-width: $tablet-width) {

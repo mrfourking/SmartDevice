@@ -21,13 +21,15 @@
 .products__list {
   @include reset-list;
 
+  margin: 0 auto;
+
   display: flex;
 }
 
 .products__item {
   margin-right: 30px;
 
-  &:last-child {
+  &:nth-child(3n) {
     margin-right: 0;
   }
 }
@@ -43,15 +45,18 @@
 
 .products__item-title {
   z-index: 1;
-  width: 51%;
+  width: 45%;
   margin: 67px 0 0 44px;
 
   @include roboto-condenced(400, 20px, 30px);
 }
 
 .products__image {
-  display: block;
   margin-top: -108px;
+
+  img {
+    display: block;
+  }
 }
 
 .products__arrow {
@@ -98,9 +103,12 @@
   }
 
   .products__image {
-    display: block;
-    width: 100%;
     margin-top: -100px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 }
 

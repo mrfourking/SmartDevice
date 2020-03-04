@@ -65,6 +65,7 @@
 })();
 
 (function () {
+  var ESC_KEYCODE = 27;
   var openButton = document.querySelector('.header__callback-button');
   var modal = document.querySelector('.modal');
   var closeButton = modal.querySelector('.callback-form__button-close');
@@ -104,7 +105,7 @@
   };
 
   var onModalKeydown = function (evt) {
-    if (evt.keyCode === 27) {
+    if (evt.keyCode === ESC_KEYCODE) {
       closeModal();
     }
   };

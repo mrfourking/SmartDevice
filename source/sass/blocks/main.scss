@@ -149,6 +149,7 @@
   }
 
   .main__image {
+    flex-shrink: 0;
     width: 465px;
   }
 }
@@ -218,7 +219,7 @@
 
   .main__image {
     order: -1;
-    width: 301;
+    width: 301px;
     margin-left: 19px;
   }
 }

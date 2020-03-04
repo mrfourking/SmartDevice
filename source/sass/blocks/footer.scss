@@ -12,11 +12,13 @@
 }
 
 .footer__logo-wrap {
+  display: flex;
+  flex-direction: column;
   margin-right: 14.6%;
 }
 
 .footer__logo {
-  margin-bottom: 53px;
+  margin-bottom: 48px;
 }
 
 .footer__menu {
@@ -48,6 +50,14 @@
 .footer__phones {
   @include reset-list;
   @include footer-text;
+}
+
+.footer__phones-item {
+  a {
+    font-weight: inherit;
+    color: $footer-text-color;
+    opacity: 0.5;
+  }
 }
 
 .footer__copyright {
@@ -103,13 +113,12 @@
   }
 
   .footer__logo-wrap {
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    // justify-content: space-between;
     width: 100%;
     margin: 0;
     margin-bottom: 38px;
-    padding: 20px 25px 24px;
+    padding: 20px 25px 19px;
 
     border-bottom: 1px solid rgba($footer-border-color, 0.2);
   }

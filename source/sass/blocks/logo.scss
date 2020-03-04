@@ -1,41 +1,12 @@
 .logo {
-  display: flex;
+  flex-shrink: 0;
   margin-right: 8.4%;
 
-  img {
-    flex-shrink: 0;
-    margin-right: 16px;
+  &--big {
+    margin-right: 0;
   }
 
   @include interactive;
-}
-
-.logo__name {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  margin: 0;
-  margin-top: 5px;
-
-  span:first-child {
-    font-family: "roboto-condenced", "Arial", sans-serif;
-    font-size: 25px;
-    line-height: 29px;
-    font-weight: 700;
-    color: $dark-text-color;
-  }
-
-  span:last-child {
-    font-family: "roboto", "Arial", sans-serif;
-    font-size: 12px;
-    line-height: 14px;
-    font-weight: 400;
-    color: $header-logo-color;
-  }
-
-  &--dark span:first-child {
-    color: $footer-logo-color;
-  }
 }
 
 @media (max-width: $tablet-width) {
@@ -59,16 +30,8 @@
     }
 
     &--big img {
-      width: 52px;
+      width: 216px;
       height: 52px;
-    }
-  }
-
-  .logo__name {
-    display: none;
-
-    &--dark {
-      display: flex;
     }
   }
 }

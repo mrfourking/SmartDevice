@@ -5,16 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.">
+  <meta name="keyword" content="Печатные платы, монтаж, производство, светотехника, электроника, комплектующие">
   <title>Smart Device</title>
 
   <link rel="preload" href="fonts/ptmono-regular.woff2" as="font">
-  <link rel="preload" href="fonts/ptmono-regular.woff" as="font">
+  <!-- <link rel="preload" href="fonts/ptmono-regular.woff" as="font"> -->
   <link rel="preload" href="fonts/roboto-regular.woff2" as="font">
-  <link rel="preload" href="fonts/roboto-regular.woff" as="font">
+  <!-- <link rel="preload" href="fonts/roboto-regular.woff" as="font"> -->
   <link rel="preload" href="fonts/robotocondensed-bold.woff2" as="font">
-  <link rel="preload" href="fonts/robotocondensed-bold.woff" as="font">
+  <!-- <link rel="preload" href="fonts/robotocondensed-bold.woff" as="font"> -->
   <link rel="preload" href="fonts/robotocondensed-regular.woff2" as="font">
-  <link rel="preload" href="fonts/robotocondensed-regular.woff" as="font">
+  <!-- <link rel="preload" href="fonts/robotocondensed-regular.woff" as="font"> -->
 
   <link rel="stylesheet" href="css/style.min.css">
   <script src="js/picturefill.min.js" async></script>
@@ -28,11 +30,10 @@
 
   <header class="header">
     <a class="header__logo logo">
-      <img src="img/logo.svg" width="52" height="52" alt="Smart Device">
-      <p class="logo__name">
-        <span>Smart Device</span>
-        <span>умные технологии</span>
-      </p>
+      <picture>
+        <source media="(max-width: 767px)" srcset="img/logo.svg">
+        <img src="img/logo-header-desktop.svg" width="202" height="52" alt="Smart Device">
+      </picture>
     </a>
     <button class="header__menu-button" type="button">
       <span class="visually-hidden">Меню</span>
@@ -70,12 +71,13 @@
         </a>
         <a class="main__link" href="#about">Скролл вниз</a>
       </div>
-      <picture>
-        <source type="image/webp" srcset="img/board-desktop.webp 1x, img/board-desktop@2x.webp 2x">
-        <img class="main__image" src="img/board-desktop.png" srcset="img/board-desktop@2x.png 2x" width="705"
-          height="515" alt="Печатные платы">
-        <!--Не ретина : 705 х 515; Ретина: 1410 х 1030 -->
-      </picture>
+      <div class="main__image">
+        <picture>
+          <source type="image/webp" srcset="img/board-desktop.webp 1x, img/board-desktop@2x.webp 2x"><!--Не ретина : 705 х 515; Ретина: 1410 х 1030 -->
+          <img src="img/board-desktop.png" srcset="img/board-desktop@2x.png 2x" width="705"
+            height="515" alt="Печатные платы"><!--Не ретина : 705 х 515; Ретина: 1410 х 1030 -->
+        </picture>
+      </div>
     </section>
 
     <div class="section-wrap">
@@ -99,7 +101,7 @@
                 fill="#00B2FF" />
             </svg>
             <h3 class="card__title">Оперативные сроки</h3>
-            <p class="card__content">Усовершенствованная логистическая система позволяет нам просчитывать стоимость,
+            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость,
               производить и доставлять заказы плат и комплектующих в самые короткие сроки
             </p>
           </li>
@@ -123,7 +125,7 @@
                 fill="#00B2FF" />
             </svg>
             <h3 class="card__title">Крупные поставщики</h3>
-            <p class="card__content">
+            <p>
               Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
               Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
             </p>
@@ -148,7 +150,7 @@
                 fill="#00B2FF" />
             </svg>
             <h3 class="card__title">Полная конфиденциальность</h3>
-            <p class="card__content">
+            <p>
               По желанию клиента мы обеспечиваем полную конфеденциальность.
             </p>
           </li>
@@ -175,7 +177,7 @@
                 fill="#00B2FF" />
             </svg>
             <h3 class="card__title">Персонализация стоимости</h3>
-            <p class="card__content">
+            <p>
               Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
               устраивает.
             </p>
@@ -185,11 +187,11 @@
 
       <section class="about" id="about">
         <h2 class="about__title">О компании</h2>
-        <p class="about__content">
+        <p>
           Мы поставляем электронные комплектующие, производим печатные платы и предоставляем
           мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
         </p>
-        <p class="about__content about__content--big-margin">
+        <p>
           Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные
           платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
           РоссАвтоПрома
@@ -204,20 +206,21 @@
       <p class="products__intro">Service Device предлагает следующие товары и услуги</p>
       <ul class="products__list">
         <li class="products__item">
-          <a class="products__link">
+          <a class="products__link" href="#">
             <h3 class="products__item-title">Производство печатных плат</h3>
-            <picture>
-              <source type="image/webp" media="(max-width: 767px)"
-                srcset="img/product-1-mobile.webp 1x, img/product-1-desktop@2x.webp 2x">
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="img/product-1-tablet.webp 1x, img/product-1-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/product-1-desktop.webp 1x, img/product-1-desktop@2x.webp 2x">
-              <source media="(max-width: 767px)" srcset="img/product-1-mobile.png 1x, img/product-1-desktop@2x.png 2x">
-              <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png 1x, img/product-1-tablet@2x.png 2x">
-              <img class="products__image" src="img/product-1-desktop.png" srcset="img/product-1-desktop@2x.png 2x"
-                width="370" height="620" alt="Производство печатных плат">
-              <!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
-            </picture>
+            <div class="products__image">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)"
+                  srcset="img/product-1-mobile.webp 1x, img/product-1-mobile@2x.webp 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
+                <source type="image/webp" media="(max-width: 1023px)"
+                  srcset="img/product-1-tablet.webp 1x, img/product-1-tablet@2x.webp 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
+                <source type="image/webp" srcset="img/product-1-desktop.webp 1x, img/product-1-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+                <source media="(max-width: 767px)" srcset="img/product-1-mobile.png 1x, img/product-1-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
+                <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png 1x, img/product-1-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
+                <img src="img/product-1-desktop.png" srcset="img/product-1-desktop@2x.png 2x"
+                  width="370" height="620" alt="Производство печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+              </picture>
+            </div>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round" />
@@ -226,20 +229,21 @@
           </a>
         </li>
         <li class="products__item">
-          <a class="products__link">
+          <a class="products__link" href="#">
             <h3 class="products__item-title">Монтаж печатных плат</h3>
-            <picture>
-              <source type="image/webp" media="(max-width: 767px)"
-                srcset="img/product-2-mobile.webp 1x, img/product-2-desktop@2x.webp 2x">
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="img/product-2-tablet.webp 1x, img/product-2-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/product-2-desktop.webp 1x, img/product-2-desktop@2x.webp 2x">
-              <source media="(max-width: 767px)" srcset="img/product-2-mobile.png 1x, img/product-2-desktop@2x.png 2x">
-              <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png 1x, img/product-2-tablet@2x.png 2x">
-              <img class="products__image" src="img/product-2-desktop.png" srcset="img/product-2-desktop@2x.png 2x"
-                width="370" height="620" alt="Монтаж печатных плат">
-              <!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
-            </picture>
+            <div class="products__image">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)"
+                  srcset="img/product-2-mobile.webp 1x, img/product-2-mobile@2x.webp 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
+                <source type="image/webp" media="(max-width: 1023px)"
+                  srcset="img/product-2-tablet.webp 1x, img/product-2-tablet@2x.webp 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
+                <source type="image/webp" srcset="img/product-2-desktop.webp 1x, img/product-2-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+                <source media="(max-width: 767px)" srcset="img/product-2-mobile.png 1x, img/product-2-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
+                <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png 1x, img/product-2-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
+                <img src="img/product-2-desktop.png" srcset="img/product-2-desktop@2x.png 2x"
+                  width="370" height="620" alt="Монтаж печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+              </picture>
+            </div>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round" />
@@ -248,20 +252,21 @@
           </a>
         </li>
         <li class="products__item">
-          <a class="products__link">
-            <h3 class="products__item-title">Комплектующие<br> для светотехники</h3>
-            <picture>
-              <source type="image/webp" media="(max-width: 767px)"
-                srcset="img/product-3-mobile.webp 1x, img/product-3-desktop@2x.webp 2x">
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="img/product-3-tablet.webp 1x, img/product-3-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/product-3-desktop.webp 1x, img/product-3-desktop@2x.webp 2x">
-              <source media="(max-width: 767px)" srcset="img/product-3-mobile.png 1x, img/product-3-desktop@2x.png 2x">
-              <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png 1x, img/product-3-tablet@2x.png 2x">
-              <img class="products__image" src="img/product-3-desktop.png" srcset="img/product-3-desktop@2x.png 2x"
-                width="370" height="620" alt="Комплектующие для светотехники">
-              <!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
-            </picture>
+          <a class="products__link" href="#">
+            <h3 class="products__item-title">Комплектующие для светотехники</h3>
+            <div class="products__image">
+              <picture>
+                <source type="image/webp" media="(max-width: 767px)"
+                  srcset="img/product-3-mobile.webp 1x, img/product-3-mobile@2x.webp 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
+                <source type="image/webp" media="(max-width: 1023px)"
+                  srcset="img/product-3-tablet.webp 1x, img/product-3-tablet@2x.webp 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
+                <source type="image/webp" srcset="img/product-3-desktop.webp 1x, img/product-3-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+                <source media="(max-width: 767px)" srcset="img/product-3-mobile.png 1x, img/product-3-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
+                <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png 1x, img/product-3-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
+                <img src="img/product-3-desktop.png" srcset="img/product-3-desktop@2x.png 2x"
+                  width="370" height="620" alt="Комплектующие для светотехники"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+              </picture>
+            </div>
             <span class="products__arrow">
               <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round" />
@@ -276,28 +281,24 @@
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <div class="callback__image-wrap">
         <picture>
-          <source type="image/webp" srcset="img/plane.webp 1x, img/plane@2x.webp 2x">
-          <img class="callback__image" src="img/plane.png" srcset="img/plane@2x.png 2x" width="511" height="228"
-            alt="Бумажный самолётик">
-          <!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
+          <source type="image/webp" srcset="img/plane.webp 1x, img/plane@2x.webp 2x"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
+          <img src="img/plane.png" srcset="img/plane@2x.png 2x" width="511" height="228"
+           alt="форма обратной связи"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
         </picture>
       </div>
       <div class="callback__form callback-form">
         <p class="callback-form__title">Остались вопросы? Задайте их нам!</p>
         <p class="callback-form__intro">Мы проконсультируем Вас бесплатно</p>
-        <form class="callback-form__form" method="POST" action="https://echo.htmlacademy.ru">
-          <input class="callback-form__input" type="text" name="name" id="name" placeholder="Имя" required>
-          <label class="visually-hidden" for="name">Имя</label>
-          <input class="callback-form__input callback-form__input--no-margin" type="tel" name="phone" id="phone"
-            placeholder="Телефон" required>
-          <label class="visually-hidden" for="phone">Телефон</label>
-          <textarea class="callback-form__textarea" name="question" id="question" placeholder="Ваш вопрос"
-            required></textarea>
-          <label class="visually-hidden" for="question">Ваш вопрос</label>
-          <button class="callback-form__button" type="submit">Задать вопрос</button>
-          <input class="callback-form__argeement-checkbox visually-hidden" type="checkbox" name="agreement"
-            id="agreement" checked>
-          <label class="callback-form__argeement" for="agreement">Я согласен на обработку персональных данных</label>
+        <form method="POST" action="https://echo.htmlacademy.ru">
+          <input type="text" name="name" id="name" placeholder="Имя" required>
+          <label for="name">Имя</label>
+          <input type="tel" name="phone" id="phone" placeholder="Телефон" required>
+          <label for="phone">Телефон</label>
+          <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
+          <label for="question">Ваш вопрос</label>
+          <button type="submit">Задать вопрос</button>
+          <input type="checkbox" name="agreement" id="agreement" checked>
+          <label for="agreement">Я согласен на обработку персональных данных</label>
         </form>
       </div>
     </section>
@@ -306,12 +307,8 @@
   <footer class="footer">
     <div class="footer__wrap">
       <div class="footer__logo-wrap">
-        <a class="footer__logo logo logo--big" href="index.html">
-          <img src="img/logo.svg" width="52" height="52" alt="Smart Device">
-          <p class="logo__name logo__name--dark">
-            <span>Service Device</span>
-            <span>умные технологии</span>
-          </p>
+        <a class="footer__logo logo logo--big">
+          <img src="img/logo-footer-desktop.svg" width="216" height="52" alt="Service Device">
         </a>
         <span class="footer__trademark footer__trademark--logo">1999-2018 SD Service Devices</span>
         <ul class="footer__social social">
@@ -373,13 +370,13 @@
           <p class="footer__address">г. Мытищи, Олимпийский проспект, д.10</p>
           <ul class="footer__phones">
             <li class="footer__phones-item">
-              <span>+7 (495) 589-40-50</span>
+              <a href="tel:+74955894050">+7 (495) 589-40-50</a>
             </li>
             <li class="footer__phones-item">
-              <span>+7 (925) 003-87-67</span>
+              <a href="tel:+79250038767">+7 (925) 003-87-67</a>
             </li>
             <li class="footer__phones-item">
-              <span>+7 (926) 926-080-79</span>
+              <a href="tel:+792692608079">+7 (926) 926-080-79</span>
             </li>
           </ul>
         </div>
@@ -397,33 +394,27 @@
     <h2 class="callback-form__title callback-form__title--modal">Закажите звонок</h2>
     <p class="callback-form__intro callback-form__intro--modal">Оставьте контакты, мы проконсультируем вас бесплатно в
       удобное время</p>
-    <form class="callback-form__form callback-form__form--modal" method="POST" action="https://echo.htmlacademy.ru">
-      <input class="callback-form__input callback-form__input--modal" type="text" name="name" id="name-modal"
-        placeholder="Имя" required>
-      <label class="visually-hidden" for="name-modal">Имя</label>
-      <input class="callback-form__input callback-form__input--no-margin callback-form__input--modal" type="tel"
-        name="phone" id="phone-modal" placeholder="Телефон" required>
-      <label class="visually-hidden" for="phone-modal">Телефон</label>
-      <textarea class="callback-form__textarea callback-form__textarea--modal" name="question" id="question-modal"
-        placeholder="Ваш вопрос" required></textarea>
-      <label class="visually-hidden" for="question-modal">Ваш вопрос</label>
-      <button class="callback-form__button callback-form__button--modal" type="submit">Отправить</button>
-      <input class="callback-form__argeement-checkbox visually-hidden" type="checkbox" name="agreement"
-        id="agreement-modal" checked>
-      <label class="callback-form__argeement callback-form__argeement--modal" for="agreement-modal">Я согласен на
-        обработку
-        персональных данных</label>
-      <button class="callback-form__button-close" type="button">
-        <span class="visually-hidden">Закрыть окно</span>
-        <svg width="17" height="17" viewBox="0 0 17 17">
-          <use xlink:href="#icon-cross"></use>
-        </svg>
-      </button>
+    <form method="POST" action="https://echo.htmlacademy.ru">
+      <input type="text" name="name" id="name-modal" placeholder="Имя" required>
+      <label for="name-modal">Имя</label>
+      <input type="tel" name="phone" id="phone-modal" placeholder="Телефон" required>
+      <label for="phone-modal">Телефон</label>
+      <textarea name="question" id="question-modal" placeholder="Ваш вопрос" required></textarea>
+      <label for="question-modal">Ваш вопрос</label>
+      <button type="submit">Отправить</button>
+      <input type="checkbox" name="agreement" id="agreement-modal" checked>
+      <label for="agreement-modal">Я согласен на обработку персональных данных</label>
     </form>
+    <button class="callback-form__button-close" type="button">
+      <span class="visually-hidden">Закрыть окно</span>
+      <svg width="17" height="17" viewBox="0 0 17 17">
+        <use xlink:href="#icon-cross"></use>
+      </svg>
+    </button>
   </section>
 
   <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/jquery.inputmask.js"></script>
+  <script src="js/jquery.inputmask.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
