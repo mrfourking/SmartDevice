@@ -11,15 +11,13 @@
 
   <link rel="preload" href="fonts/ptmono-regular.woff2" as="font">
   <link rel="preload" href="fonts/ptmono-regular.woff" as="font">
-  <link rel="preload" href="fonts/roboto-regular.woff2" as="font">
-  <link rel="preload" href="fonts/roboto-regular.woff" as="font">
   <link rel="preload" href="fonts/robotocondensed-bold.woff2" as="font">
   <link rel="preload" href="fonts/robotocondensed-bold.woff" as="font">
   <link rel="preload" href="fonts/robotocondensed-regular.woff2" as="font">
   <link rel="preload" href="fonts/robotocondensed-regular.woff" as="font">
 
   <link rel="stylesheet" href="css/style.min.css">
-  <!-- <script src="js/picturefill.min.js" async></script> -->
+  <script src="js/picturefill.min.js" async></script>
 </head>
 
 <body>
@@ -217,7 +215,7 @@
                 <source type="image/webp" srcset="img/product-1-desktop.webp 1x, img/product-1-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-1-mobile.png 1x, img/product-1-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png 1x, img/product-1-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img data-src="img/product-1-desktop.png" loading="lazy" srcset="img/product-1-desktop@2x.png 2x"
+                <img src="img/product-1-desktop.png" loading="lazy" srcset="img/product-1-desktop@2x.png 2x"
                   width="370" height="620" alt="Производство печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
@@ -240,7 +238,7 @@
                 <source type="image/webp" srcset="img/product-2-desktop.webp 1x, img/product-2-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-2-mobile.png 1x, img/product-2-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png 1x, img/product-2-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img data-src="img/product-2-desktop.png" loading="lazy" srcset="img/product-2-desktop@2x.png 2x"
+                <img src="img/product-2-desktop.png" loading="lazy" srcset="img/product-2-desktop@2x.png 2x"
                   width="370" height="620" alt="Монтаж печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
@@ -263,7 +261,7 @@
                 <source type="image/webp" srcset="img/product-3-desktop.webp 1x, img/product-3-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-3-mobile.png 1x, img/product-3-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png 1x, img/product-3-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img data-src="img/product-3-desktop.png" loading="lazy" srcset="img/product-3-desktop@2x.png 2x"
+                <img src="img/product-3-desktop.png" loading="lazy" srcset="img/product-3-desktop@2x.png 2x"
                   width="370" height="620" alt="Комплектующие для светотехники"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
@@ -282,7 +280,7 @@
       <div class="callback__image-wrap">
         <picture>
           <source type="image/webp" srcset="img/plane.webp 1x, img/plane@2x.webp 2x"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
-          <img data-src="img/plane.png" loading="lazy" srcset="img/plane@2x.png 2x" width="511" height="228"
+          <img src="img/plane.png" loading="lazy" srcset="img/plane@2x.png 2x" width="511" height="228"
               alt="форма обратной связи"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
         </picture>
       </div>
@@ -413,8 +411,6 @@
     </button>
   </section>
 
-  <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
-  <!-- <script src="js/jquery.inputmask.min.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 
