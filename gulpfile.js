@@ -16,13 +16,13 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
 var jsuglify = require("gulp-uglify");
-var pipeline = require('readable-stream').pipeline;
+var pipeline = require("readable-stream").pipeline;
 
-gulp.task('compress', function () {
+gulp.task("compress", function () {
   return pipeline(
-        gulp.src('source/js/*.js'),
+        gulp.src("source/js/*.js"),
         jsuglify(),
-        gulp.dest('build/js')
+        gulp.dest("build/js")
   );
 });
 
@@ -75,7 +75,7 @@ gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.optipng({
-        optimizationLevel: 3
+        optimizationLevel: 5
       }),
       imagemin.jpegtran({
         progressive: true
@@ -90,7 +90,7 @@ gulp.task("images", function () {
 gulp.task("webp", function () {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(webp({
-      quality: 90
+      quality: 80
     }))
     .pipe(gulp.dest("source/img"));
 });
