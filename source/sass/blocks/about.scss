@@ -10,7 +10,7 @@
   background-size: 11.45% auto;
 
   @media (min-resolution: $retina-dpi),
-  (min-resolution: $retina-dppx) {
+    (min-resolution: $retina-dppx) {
     background-image: url("../img/about-bg-desktop@2x.png");
   }
 
@@ -52,7 +52,7 @@
     background-size: auto;
 
     @media (min-resolution: $retina-dpi),
-    (min-resolution: $retina-dppx) {
+      (min-resolution: $retina-dppx) {
       background-image: url("../img/about-bg-tablet@2x.png");
     }
   }

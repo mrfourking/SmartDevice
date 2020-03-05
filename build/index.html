@@ -170,7 +170,7 @@
                 <source type="image/webp" srcset="img/product-1-desktop.webp 1x, img/product-1-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-1-mobile.png 1x, img/product-1-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png 1x, img/product-1-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img src="img/product-1-desktop.png" srcset="img/product-1-desktop@2x.png 2x" width="370" height="620" alt="Производство печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+                <img data-src="img/product-1-desktop.png" loading="lazy" srcset="img/product-1-desktop@2x.png 2x" width="370" height="620" alt="Производство печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
             <span class="products__arrow">
@@ -190,7 +190,7 @@
                 <source type="image/webp" srcset="img/product-2-desktop.webp 1x, img/product-2-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-2-mobile.png 1x, img/product-2-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png 1x, img/product-2-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img src="img/product-2-desktop.png" srcset="img/product-2-desktop@2x.png 2x" width="370" height="620" alt="Монтаж печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+                <img data-src="img/product-2-desktop.png" loading="lazy" srcset="img/product-2-desktop@2x.png 2x" width="370" height="620" alt="Монтаж печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
             <span class="products__arrow">
@@ -210,7 +210,7 @@
                 <source type="image/webp" srcset="img/product-3-desktop.webp 1x, img/product-3-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-3-mobile.png 1x, img/product-3-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png 1x, img/product-3-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img src="img/product-3-desktop.png" srcset="img/product-3-desktop@2x.png 2x" width="370" height="620" alt="Комплектующие для светотехники"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
+                <img data-src="img/product-3-desktop.png" loading="lazy" srcset="img/product-3-desktop@2x.png 2x" width="370" height="620" alt="Комплектующие для светотехники"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
             <span class="products__arrow">
@@ -228,7 +228,7 @@
       <div class="callback__image-wrap">
         <picture>
           <source type="image/webp" srcset="img/plane.webp 1x, img/plane@2x.webp 2x"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
-          <img src="img/plane.png" srcset="img/plane@2x.png 2x" width="511" height="228" alt="форма обратной связи"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
+          <img data-src="img/plane.png" loading="lazy" srcset="img/plane@2x.png 2x" width="511" height="228" alt="форма обратной связи"><!--Не ретина : 511 х 228; Ретина: 1022 х 576 -->
         </picture>
       </div>
       <div class="callback__form callback-form">
@@ -237,7 +237,7 @@
         <form method="POST" action="https://echo.htmlacademy.ru">
           <input type="text" name="name" id="name" placeholder="Имя" required="">
           <label for="name">Имя</label>
-          <input type="tel" name="phone" id="phone" placeholder="Телефон" required="">
+          <input type="tel" name="phone" id="phone" placeholder="Телефон" maxlength="16" required="">
           <label for="phone">Телефон</label>
           <textarea name="question" id="question" placeholder="Ваш вопрос" required=""></textarea>
           <label for="question">Ваш вопрос</label>
@@ -253,7 +253,7 @@
     <div class="footer__wrap">
       <div class="footer__logo-wrap">
         <a class="footer__logo logo logo--big">
-          <img src="img/logo-footer-desktop.svg" width="216" height="52" alt="Service Device">
+          <img src="img/logo-footer-desktop.svg" loading="lazy" width="216" height="52" alt="Service Device">
         </a>
         <span class="footer__trademark footer__trademark--logo">1999-2018 SD Service Devices</span>
         <ul class="footer__social social">
@@ -321,8 +321,8 @@
               <a href="tel:+79250038767">+7 (925) 003-87-67</a>
             </li>
             <li class="footer__phones-item">
-              <a href="tel:+792692608079">+7 (926) 926-080-79
-            </a></li>
+              <a href="tel:+792692608079">+7 (926) 926-080-79</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -342,7 +342,7 @@
     <form method="POST" action="https://echo.htmlacademy.ru">
       <input type="text" name="name" id="name-modal" placeholder="Имя" required="">
       <label for="name-modal">Имя</label>
-      <input type="tel" name="phone" id="phone-modal" placeholder="Телефон" required="">
+      <input type="tel" name="phone" id="phone-modal" placeholder="Телефон" maxlength="16" required="">
       <label for="phone-modal">Телефон</label>
       <textarea name="question" id="question-modal" placeholder="Ваш вопрос" required=""></textarea>
       <label for="question-modal">Ваш вопрос</label>
@@ -358,8 +358,8 @@
     </button>
   </section>
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/jquery.inputmask.min.js"></script>
+  <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+  <!-- <script src="js/jquery.inputmask.min.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 

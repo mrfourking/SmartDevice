@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * Аккордеон для футера в мобильном разрешении
+ */
 (function () {
   var accordionBlocks = document.querySelectorAll('.accordion');
   var accordionTitles = document.querySelectorAll('.footer__title');
@@ -32,6 +35,9 @@
   });
 })();
 
+/**
+ * Сокращение контентных блоков при большой длине в блоке О компании
+ */
 (function () {
   var TABLET_WIDTH = 1023;
   var STRING_LENGTH = 200;
@@ -50,20 +56,83 @@
   }
 })();
 
+/**
+ * Маска телефона
+ */
 (function () {
-  $(function () {
-    $('#phone').inputmask('+7(9{3})9{3}-9{2}-9{2}', {
-      jitMasking: 3
-    });
-  });
+  var START_SYMBOLS = '+7(';
+  var CLOSE_SYMBOL = ')';
+  var SEPARATOR = '-';
 
-  $(function () {
-    $('#phone-modal').inputmask('+7(9{3})9{3}-9{2}-9{2}', {
-      jitMasking: 3
+  var phoneInputs = document.querySelectorAll('input[type="tel"');
+
+  var setValue = function (item, evt) {
+    if (item.value.length < 16) {
+      switch (item.value.length) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+          item.value = START_SYMBOLS;
+          break;
+        case 6:
+          item.value += CLOSE_SYMBOL;
+          break;
+        case 10:
+        case 13:
+          item.value += SEPARATOR;
+          break;
+        default:
+          if (/[\d]/g.test(evt.key)) {
+            item.value += evt.key;
+          }
+      }
+    }
+  };
+
+  var onTelKeydown = function (item) {
+    return function (evt) {
+      if (item.value.length < 4 && evt.keyCode === 8) {
+        item.value = START_SYMBOLS;
+      }
+      if (/[\d]/g.test(evt.key)) {
+        setValue(item, evt.key);
+      } else {
+        item.value = item.value.replace(/[^0-9\+\()]/, '');
+      }
+    };
+  };
+
+  phoneInputs.forEach(function (item) {
+    item.addEventListener('focus', function () {
+      setValue(item);
+
+      item.addEventListener('keydown', function (evt) {
+        evt.stopImmediatePropagation();
+        return false;
+      });
+
+      item.addEventListener('keypress', function (evt) {
+        evt.stopImmediatePropagation();
+        return false;
+      });
+
+      item.addEventListener('keyup', onTelKeydown(item));
+    });
+
+    item.addEventListener('blur', function () {
+      if (item.value.length <= START_SYMBOLS.length) {
+        item.value = '';
+      }
+
+      item.removeEventListener('keyup', onTelKeydown(item));
     });
   });
 })();
 
+/**
+ * Скрипт для работы модального окна
+ */
 (function () {
   var ESC_KEYCODE = 27;
   var openButton = document.querySelector('.header__callback-button');
@@ -146,6 +215,9 @@
   });
 })();
 
+/**
+ * Плавный переход по якорной ссылке
+ */
 (function () {
   var mainBlock = document.querySelector('.main');
   var links = mainBlock.querySelectorAll('a[href*="#"]');
