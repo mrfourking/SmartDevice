@@ -43,7 +43,7 @@
   var STRING_LENGTH = 200;
   var END_CHARACTER = '..';
 
-  var contentBlocks = document.querySelectorAll('.about__content');
+  var contentBlocks = document.querySelectorAll('.about p');
 
   if (document.body.clientWidth <= TABLET_WIDTH) {
     contentBlocks.forEach(function (item) {
@@ -63,11 +63,14 @@
   var START_SYMBOLS = '+7(';
   var CLOSE_SYMBOL = ')';
   var SEPARATOR = '-';
+  var MIN_LENGTH = 4;
+  var MAX_LENGTH = 16;
+  var BACKSPACE_KEYCODE = 8;
 
   var phoneInputs = document.querySelectorAll('input[type="tel"');
 
   var setValue = function (item, evt) {
-    if (item.value.length < 16) {
+    if (item.value.length < MAX_LENGTH) {
       switch (item.value.length) {
         case 0:
         case 1:
@@ -92,7 +95,7 @@
 
   var onTelKeydown = function (item) {
     return function (evt) {
-      if (item.value.length < 4 && evt.keyCode === 8) {
+      if (item.value.length < MIN_LENGTH && evt.keyCode === BACKSPACE_KEYCODE) {
         item.value = START_SYMBOLS;
       }
       if (/[\d]/g.test(evt.key)) {

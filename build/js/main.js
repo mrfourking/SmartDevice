@@ -1,1 +1,255 @@
-"use strict";!function(){function t(t){return function(){var e;(e=t).classList.add("footer__title--active"),e.nextElementSibling.classList.add("accordion--open"),n&&(n.classList.remove("footer__title--active"),n.nextElementSibling.classList.remove("accordion--open")),n=n===e?0:e}}var n,e=document.querySelectorAll(".accordion"),o=document.querySelectorAll(".footer__title");e.forEach(function(e){e.classList.remove("accordion--nojs")}),o.forEach(function(e){e.addEventListener("click",t(e))})}(),function(){var e=document.querySelectorAll(".about__content");document.body.clientWidth<=1023&&e.forEach(function(e){var t=e.innerText;200<t.length&&(e.innerText=t.substr(0,200)+"..")})}(),function(){function n(e,t){if(e.value.length<16)switch(e.value.length){case 0:case 1:case 2:case 3:e.value=o;break;case 6:e.value+=")";break;case 10:case 13:e.value+="-";break;default:/[\d]/g.test(t.key)&&(e.value+=t.key)}}function t(t){return function(e){t.value.length<4&&8===e.keyCode&&(t.value=o),/[\d]/g.test(e.key)?n(t,e.key):t.value=t.value.replace(/[^0-9\+\()]/,"")}}var o="+7(",e=document.querySelectorAll('input[type="tel"');e.forEach(function(e){e.addEventListener("focus",function(){n(e),e.addEventListener("keydown",function(e){return e.stopImmediatePropagation(),!1}),e.addEventListener("keypress",function(e){return e.stopImmediatePropagation(),!1}),e.addEventListener("keyup",t(e))}),e.addEventListener("blur",function(){e.value.length<=o.length&&(e.value=""),e.removeEventListener("keyup",t(e))})})}(),function(){var e=document.querySelector(".header__callback-button"),t=document.querySelector(".modal"),n=t.querySelector(".callback-form__button-close"),o=t.querySelector("#name-modal"),c=t.querySelector("#phone-modal"),r=t.querySelector("#question-modal"),a=!0,l="",u="",i="";try{l=localStorage.getItem("userName"),u=localStorage.getItem("userPhone"),i=localStorage.getItem("userMessage")}catch(e){a=!1}function s(){t.classList.remove("modal--open"),document.body.classList.remove("scroll-hidden"),document.removeEventListener("keydown",v),document.removeEventListener("click",f)}function d(){s(),a&&(localStorage.setItem("userName",o.value),localStorage.setItem("userPhone",c.value),localStorage.setItem("userMessage",r.value))}var v=function(e){27===e.keyCode&&s()},f=function(e){e.target===t||t.contains(e.target)||s()};e.addEventListener("click",function(e){e.preventDefault(),e.stopPropagation(),t.classList.add("modal--open"),document.body.classList.add("scroll-hidden"),o.focus(),a&&(o.value=l,c.value=u,r.value=i),document.addEventListener("keydown",v),document.addEventListener("click",f)}),t.addEventListener("submit",function(){d()}),n.addEventListener("click",function(e){e.preventDefault(),d()})}(),function(){function o(n){return function(){var e,t;(t=(e=n)/20)>window.pageYOffset-e&&window.innerHeight+window.pageYOffset<document.body.offsetHeight?window.scrollBy(0,t):(window.scrollTo(0,e),clearInterval(window.scroller))}}var e=document.querySelector(".main").querySelectorAll('a[href*="#"]');e.forEach(function(n){n.addEventListener("click",function(e){e.preventDefault();var t=document.querySelector(n.getAttribute("href")).getBoundingClientRect().top+window.pageYOffset;window.scroller=setInterval(o(t),15)})})}();
+'use strict';
+
+/**
+ * Аккордеон для футера в мобильном разрешении
+ */
+(function () {
+  var accordionBlocks = document.querySelectorAll('.accordion');
+  var accordionTitles = document.querySelectorAll('.footer__title');
+  var activeBlock;
+
+  var toggleAccordion = function (button) {
+    button.classList.add('footer__title--active');
+    button.nextElementSibling.classList.add('accordion--open');
+
+    if (activeBlock) {
+      activeBlock.classList.remove('footer__title--active');
+      activeBlock.nextElementSibling.classList.remove('accordion--open');
+    }
+
+    activeBlock = (activeBlock === button) ? 0 : button;
+  };
+
+  var onAccordionClick = function (button) {
+    return function () {
+      toggleAccordion(button);
+    };
+  };
+
+  accordionBlocks.forEach(function (item) {
+    item.classList.remove('accordion--nojs');
+  });
+
+  accordionTitles.forEach(function (item) {
+    item.addEventListener('click', onAccordionClick(item));
+  });
+})();
+
+/**
+ * Сокращение контентных блоков при большой длине в блоке О компании
+ */
+(function () {
+  var TABLET_WIDTH = 1023;
+  var STRING_LENGTH = 200;
+  var END_CHARACTER = '..';
+
+  var contentBlocks = document.querySelectorAll('.about p');
+
+  if (document.body.clientWidth <= TABLET_WIDTH) {
+    contentBlocks.forEach(function (item) {
+      var content = item.innerText;
+
+      if (content.length > STRING_LENGTH) {
+        item.innerText = content.substr(0, STRING_LENGTH) + END_CHARACTER;
+      }
+    });
+  }
+})();
+
+/**
+ * Маска телефона
+ */
+(function () {
+  var START_SYMBOLS = '+7(';
+  var CLOSE_SYMBOL = ')';
+  var SEPARATOR = '-';
+  var MIN_LENGTH = 4;
+  var MAX_LENGTH = 16;
+  var BACKSPACE_KEYCODE = 8;
+
+  var phoneInputs = document.querySelectorAll('input[type="tel"');
+
+  var setValue = function (item, evt) {
+    if (item.value.length < MAX_LENGTH) {
+      switch (item.value.length) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+          item.value = START_SYMBOLS;
+          break;
+        case 6:
+          item.value += CLOSE_SYMBOL;
+          break;
+        case 10:
+        case 13:
+          item.value += SEPARATOR;
+          break;
+        default:
+          if (/[\d]/g.test(evt.key)) {
+            item.value += evt.key;
+          }
+      }
+    }
+  };
+
+  var onTelKeydown = function (item) {
+    return function (evt) {
+      if (item.value.length < MIN_LENGTH && evt.keyCode === BACKSPACE_KEYCODE) {
+        item.value = START_SYMBOLS;
+      }
+      if (/[\d]/g.test(evt.key)) {
+        setValue(item, evt.key);
+      } else {
+        item.value = item.value.replace(/[^0-9\+\()]/, '');
+      }
+    };
+  };
+
+  phoneInputs.forEach(function (item) {
+    item.addEventListener('focus', function () {
+      setValue(item);
+
+      item.addEventListener('keydown', function (evt) {
+        evt.stopImmediatePropagation();
+        return false;
+      });
+
+      item.addEventListener('keypress', function (evt) {
+        evt.stopImmediatePropagation();
+        return false;
+      });
+
+      item.addEventListener('keyup', onTelKeydown(item));
+    });
+
+    item.addEventListener('blur', function () {
+      if (item.value.length <= START_SYMBOLS.length) {
+        item.value = '';
+      }
+
+      item.removeEventListener('keyup', onTelKeydown(item));
+    });
+  });
+})();
+
+/**
+ * Скрипт для работы модального окна
+ */
+(function () {
+  var ESC_KEYCODE = 27;
+  var openButton = document.querySelector('.header__callback-button');
+  var modal = document.querySelector('.modal');
+  var closeButton = modal.querySelector('.callback-form__button-close');
+  var userName = modal.querySelector('#name-modal');
+  var userPhone = modal.querySelector('#phone-modal');
+  var userMessage = modal.querySelector('#question-modal');
+
+  var isStorageSupport = true;
+  var storageName = '';
+  var storagePhone = '';
+  var storageMessage = '';
+
+  try {
+    storageName = localStorage.getItem('userName');
+    storagePhone = localStorage.getItem('userPhone');
+    storageMessage = localStorage.getItem('userMessage');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  var closeModal = function () {
+    modal.classList.remove('modal--open');
+    document.body.classList.remove('scroll-hidden');
+
+    document.removeEventListener('keydown', onModalKeydown);
+    document.removeEventListener('click', onRandomAreaClick);
+  };
+
+  var onModalButtonsClick = function () {
+    closeModal();
+
+    if (isStorageSupport) {
+      localStorage.setItem('userName', userName.value);
+      localStorage.setItem('userPhone', userPhone.value);
+      localStorage.setItem('userMessage', userMessage.value);
+    }
+  };
+
+  var onModalKeydown = function (evt) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      closeModal();
+    }
+  };
+
+  var onRandomAreaClick = function (evt) {
+    if (evt.target !== modal && !(modal.contains(evt.target))) {
+      closeModal();
+    }
+  };
+
+
+  openButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    modal.classList.add('modal--open');
+    document.body.classList.add('scroll-hidden');
+    userName.focus();
+
+    if (isStorageSupport) {
+      userName.value = storageName;
+      userPhone.value = storagePhone;
+      userMessage.value = storageMessage;
+    }
+
+    document.addEventListener('keydown', onModalKeydown);
+    document.addEventListener('click', onRandomAreaClick);
+  });
+
+  modal.addEventListener('submit', function () {
+    onModalButtonsClick();
+  });
+
+  closeButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    onModalButtonsClick();
+  });
+})();
+
+/**
+ * Плавный переход по якорной ссылке
+ */
+(function () {
+  var mainBlock = document.querySelector('.main');
+  var links = mainBlock.querySelectorAll('a[href*="#"]');
+  var FRAME_COUNT = 20;
+  var ANIMATION_TIME = 300;
+
+  var scrollBlock = function (coord) {
+    var scrollBy = coord / FRAME_COUNT;
+
+    if (scrollBy > window.pageYOffset - coord && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+      window.scrollBy(0, scrollBy);
+    } else {
+      window.scrollTo(0, coord);
+      clearInterval(window.scroller);
+    }
+  };
+
+  var intervalCallback = function (coord) {
+    return function () {
+      scrollBlock(coord);
+    };
+  };
+
+  links.forEach(function (item) {
+    item.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+
+      window.scroller = setInterval(intervalCallback(coordY), ANIMATION_TIME / FRAME_COUNT);
+    });
+  });
+})();

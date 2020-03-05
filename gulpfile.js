@@ -63,7 +63,7 @@ gulp.task("server", function () {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css","cssmin"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("copyJs", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series("compress", "refresh"));
 });
 
 gulp.task("refresh", function (done) {
@@ -118,15 +118,6 @@ gulp.task("copy", function () {
       "source/img/**",
       // "source/js/**",
       "source//*.ico"
-    ], {
-      base: "source"
-    })
-    .pipe(gulp.dest("build"));
-});
-
-gulp.task("copyJs", function () {
-  return gulp.src([
-      "source/js/**"
     ], {
       base: "source"
     })

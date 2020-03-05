@@ -811,6 +811,7 @@ a {
         flex-wrap: nowrap; }
   .advantages__card {
     width: auto;
+    max-width: none;
     margin-right: 0;
     margin-bottom: 20px; } }
 
@@ -1037,6 +1038,9 @@ a {
   max-width: 1200px; }
 
 .products__item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 30%;
   margin-right: 30px; }
   .products__item:nth-child(3n) {
@@ -1062,7 +1066,7 @@ a {
 
 .products__item-title {
   z-index: 1;
-  width: 150px;
+  width: 151px;
   margin: 67px 0 0 44px;
   font-family: "roboto-condenced", "Arial", sans-serif;
   font-size: 20px;
@@ -1103,7 +1107,8 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: auto; }
+    width: auto;
+    padding: 0; }
   .products__item {
     width: 100%;
     margin: 0;
