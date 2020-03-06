@@ -8,24 +8,26 @@
   @media (min-resolution: $retina-dpi),
     (min-resolution: $retina-dppx) {
     background-image: url("../img/polygon-advantages-desktop@2x.png");
+    background-size: 1920px auto;
   }
 }
 
 @media (max-width: $tablet-width) {
   .section-wrap {
     background-image: url("../img/polygon-advantages-tablet.png");
-    background-position: 210px 90px;
+    background-position: 249px 248px;
     background-size: auto;
 
     @media (min-resolution: $retina-dpi),
       (min-resolution: $retina-dppx) {
       background-image: url("../img/polygon-advantages-tablet@2x.png");
+      background-size: 521px auto;
     }
   }
 }
 
 @media (max-width: $mobile-width) {
   .section-wrap {
-    background-position: -120px 650px;
+    background-position: -83px 810px;
   }
 }

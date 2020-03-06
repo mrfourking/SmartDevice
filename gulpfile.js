@@ -90,7 +90,7 @@ gulp.task("images", function () {
 gulp.task("webp", function () {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(webp({
-      quality: 80
+      quality: 70
     }))
     .pipe(gulp.dest("source/img"));
 });
