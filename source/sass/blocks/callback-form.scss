@@ -6,7 +6,6 @@
   width: 575px;
 
   &--modal {
-
     position: absolute;
     top: 136px;
     left: 50%;
@@ -21,6 +20,7 @@
   }
 
   form {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -47,7 +47,7 @@
     line-height: 22px;
     color: #ffffff;
 
-    background-color: rgba($light-bg-color, 0.1);
+    background-color: $form--bg-input;
 
     border: none;
 
@@ -85,6 +85,16 @@
     overflow: hidden;
   }
 
+  input[type="checkbox"] {
+    bottom: 20px;
+    left: 321px;
+  }
+
+  &--modal input[type="checkbox"] {
+    bottom: 15px;
+    left: 10px;
+  }
+
   textarea {
     overflow: auto;
     resize: none;
@@ -97,7 +107,7 @@
     line-height: 22px;
     color: $dark-text-color;
 
-    background-color: rgba($light-bg-color, 0.1);
+    background-color: $form--bg-input;
 
     border: none;
 
@@ -138,6 +148,8 @@
     width: 100%;
     margin-right: 0;
     margin-bottom: 34px;
+
+    outline: none;
   }
 
   input[type="checkbox"] + label {
@@ -172,12 +184,13 @@
     cursor: pointer;
   }
 
-  input[type="checkbox"] + label:hover::before {
+  input[type="checkbox"] + label:hover::before,
+  input[type="checkbox"]:focus + label::before {
     background-color: rgba($light-bg-color, 0.5);
     transition: background-color 0.2s ease;
   }
 
-  input[type="checkbox"] + label:active::before {
+  input[type="checkbox"]:active + label::before {
     background-color: rgba($light-bg-color, 0.3);
     transition: background-color 0.2s ease;
   }
@@ -226,8 +239,9 @@
   background-color: transparent;
 
   border: none;
+  outline: none;
 
-  @include interactive;
+  @include form-interactive;
 }
 
 @media (max-width: $tablet-width) {

@@ -9,17 +9,18 @@
   color: $dark-text-color;
 
   background-color: $dark-bg-color;
-  background-image:
-    url("../img/polygon-start-desktop.png"),
-    url("../img/start-bg-desktop.png");
-  background-repeat: no-repeat;
-  background-position: 0 -69px, 0 0;
+  // background-image:
+  //   url("../img/polygon-start-desktop.png"),
+  //   url("../img/start-bg-desktop.png");
+  // background-repeat: no-repeat;
+  // background-position: 0 -69px, 0 0;
+  background-image: url("../img/start-bg-desktop.jpg");
 
-  @media (min-resolution: $retina-dpi),
-    (min-resolution: $retina-dppx) {
-    background-image: url("../img/polygon-start-desktop@2x.png"),
-      url("../img/start-bg-desktop@2x.png");
-  }
+  // @media (min-resolution: $retina-dpi),
+  //   (min-resolution: $retina-dppx) {
+  //   background-image: url("../img/polygon-start-desktop@2x.png"),
+  //     url("../img/start-bg-desktop@2x.png");
+  // }
 }
 
 .main__wrap {

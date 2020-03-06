@@ -215,7 +215,7 @@
                 <source type="image/webp" srcset="img/product-1-desktop.webp 1x, img/product-1-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-1-mobile.png 1x, img/product-1-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-1-tablet.png 1x, img/product-1-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img src="img/product-1-desktop.png" loading="lazy" srcset="img/product-1-desktop@2x.png 2x"
+                <img src="img/product-1-desktop.jpg" loading="lazy" srcset="img/product-1-desktop@2x.jpg 2x"
                   width="370" height="620" alt="Производство печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
@@ -238,7 +238,7 @@
                 <source type="image/webp" srcset="img/product-2-desktop.webp 1x, img/product-2-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-2-mobile.png 1x, img/product-2-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-2-tablet.png 1x, img/product-2-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img src="img/product-2-desktop.png" loading="lazy" srcset="img/product-2-desktop@2x.png 2x"
+                <img src="img/product-2-desktop.jpg" loading="lazy" srcset="img/product-2-desktop@2x.jpg 2x"
                   width="370" height="620" alt="Монтаж печатных плат"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
@@ -261,7 +261,7 @@
                 <source type="image/webp" srcset="img/product-3-desktop.webp 1x, img/product-3-desktop@2x.webp 2x"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
                 <source media="(max-width: 767px)" srcset="img/product-3-mobile.png 1x, img/product-3-mobile@2x.png 2x"><!--Не ретина : 290 х 256; Ретина: 580 х 512 -->
                 <source media="(max-width: 1023px)" srcset="img/product-3-tablet.png 1x, img/product-3-tablet@2x.png 2x"><!--Не ретина : 720 х 256; Ретина: 1440 х 512 -->
-                <img src="img/product-3-desktop.png" loading="lazy" srcset="img/product-3-desktop@2x.png 2x"
+                <img src="img/product-3-desktop.jpg" loading="lazy" srcset="img/product-3-desktop@2x.jpg 2x"
                   width="370" height="620" alt="Комплектующие для светотехники"><!--Не ретина : 370 х 620; Ретина: 740 х 1340 -->
               </picture>
             </div>
@@ -295,7 +295,7 @@
           <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
           <label for="question">Ваш вопрос</label>
           <button type="submit">Задать вопрос</button>
-          <input type="checkbox" name="agreement" id="agreement" checked>
+          <input type="checkbox" name="agreement" id="agreement" checked required>
           <label for="agreement">Я согласен на обработку персональных данных</label>
         </form>
       </div>
@@ -388,28 +388,31 @@
     </div>
   </footer>
 
-  <section class="modal callback-form callback-form--modal">
-    <h2 class="callback-form__title callback-form__title--modal">Закажите звонок</h2>
-    <p class="callback-form__intro callback-form__intro--modal">Оставьте контакты, мы проконсультируем вас бесплатно в
-      удобное время</p>
-    <form method="POST" action="https://echo.htmlacademy.ru">
-      <input type="text" name="name" id="name-modal" placeholder="Имя" required>
-      <label for="name-modal">Имя</label>
-      <input type="tel" name="phone" id="phone-modal" placeholder="Телефон" maxlength="16" required>
-      <label for="phone-modal" >Телефон</label>
-      <textarea name="question" id="question-modal" placeholder="Ваш вопрос" required></textarea>
-      <label for="question-modal">Ваш вопрос</label>
-      <button type="submit">Отправить</button>
-      <input type="checkbox" name="agreement" id="agreement-modal" checked>
-      <label for="agreement-modal">Я согласен на обработку персональных данных</label>
-    </form>
-    <button class="callback-form__button-close" type="button">
-      <span class="visually-hidden">Закрыть окно</span>
-      <svg width="17" height="17" viewBox="0 0 17 17">
-        <use xlink:href="#icon-cross"></use>
-      </svg>
-    </button>
-  </section>
+  <div class="modal-wrap">
+    <section class="modal callback-form callback-form--modal">
+      <h2 class="callback-form__title callback-form__title--modal">Закажите звонок</h2>
+      <p class="callback-form__intro callback-form__intro--modal">Оставьте контакты, мы проконсультируем вас бесплатно в
+        удобное время</p>
+      <form method="POST" action="https://echo.htmlacademy.ru">
+        <input type="text" name="name" id="name-modal" placeholder="Имя" required>
+        <label for="name-modal">Имя</label>
+        <input type="tel" name="phone" id="phone-modal" placeholder="Телефон" maxlength="16" required>
+        <label for="phone-modal" >Телефон</label>
+        <textarea name="question" id="question-modal" placeholder="Ваш вопрос" required></textarea>
+        <label for="question-modal">Ваш вопрос</label>
+        <button type="submit">Отправить</button>
+        <input type="checkbox" name="agreement" id="agreement-modal" checked required>
+        <label for="agreement-modal">Я согласен на обработку персональных данных</label>
+      </form>
+      <button class="callback-form__button-close" type="button">
+        <span class="visually-hidden">Закрыть окно</span>
+        <svg width="17" height="17" viewBox="0 0 17 17">
+          <use xlink:href="#icon-cross"></use>
+        </svg>
+      </button>
+    </section>
+  </div>
+
 
   <script src="js/main.js"></script>
 </body>

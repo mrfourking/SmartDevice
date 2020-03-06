@@ -49,6 +49,10 @@
     contentBlocks.forEach(function (item) {
       var content = item.innerText;
 
+      // window.addEventListener('resize', function (evt) {
+
+      // });
+
       if (content.length > STRING_LENGTH) {
         item.innerText = content.substr(0, STRING_LENGTH) + END_CHARACTER;
       }
@@ -66,8 +70,54 @@
   var MIN_LENGTH = 4;
   var MAX_LENGTH = 16;
   var BACKSPACE_KEYCODE = 8;
+  var ERROR_MESSAGE = 'Номер телефона не соответствует формату +7(ХХХ)ХХХ-ХХ-ХХ';
 
   var phoneInputs = document.querySelectorAll('input[type="tel"');
+
+  var checkPhoneNumber = function (item) {
+    var startIndex = 0;
+    var longNumber = 3;
+    var shortNumber = 2;
+    if (item.value.substr(startIndex, START_SYMBOLS.length) !== START_SYMBOLS) {
+      item.setCustomValidity(ERROR_MESSAGE);
+    } else {
+      startIndex += START_SYMBOLS.length;
+      if (isNaN(Number(item.value.substr(startIndex, longNumber)))) {
+        item.setCustomValidity(ERROR_MESSAGE);
+      } else {
+        startIndex += longNumber;
+        if (item.value.substr(startIndex, 1) !== CLOSE_SYMBOL) {
+          item.setCustomValidity(ERROR_MESSAGE);
+        } else {
+          startIndex += CLOSE_SYMBOL.length;
+          if (isNaN(Number(item.value.substr(startIndex, longNumber)))) {
+            item.setCustomValidity(ERROR_MESSAGE);
+          } else {
+            startIndex += longNumber;
+            if (item.value.substr(startIndex, 1) !== SEPARATOR) {
+              item.setCustomValidity(ERROR_MESSAGE);
+            } else {
+              startIndex += SEPARATOR.length;
+              if (isNaN(Number(item.value.substr(startIndex, shortNumber)))) {
+                item.setCustomValidity(ERROR_MESSAGE);
+              } else {
+                startIndex += shortNumber;
+                if (item.value.substr(startIndex, 1) !== SEPARATOR) {
+                  item.setCustomValidity(ERROR_MESSAGE);
+                } else {
+                  if (isNaN(Number(item.value.substr(startIndex, shortNumber)))) {
+                    item.setCustomValidity(ERROR_MESSAGE);
+                  } else {
+                    item.setCustomValidity('');
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  };
 
   var setValue = function (item, evt) {
     if (item.value.length < MAX_LENGTH) {
@@ -101,8 +151,14 @@
       if (/[\d]/g.test(evt.key)) {
         setValue(item, evt.key);
       } else {
-        item.value = item.value.replace(/[^0-9\+\()]/, '');
+        item.value = item.value.replace(/[^0-9\+\(\-)]/, '');
       }
+    };
+  };
+
+  var onTelInput = function (item) {
+    return function () {
+      checkPhoneNumber(item);
     };
   };
 
@@ -121,6 +177,8 @@
       });
 
       item.addEventListener('keyup', onTelKeydown(item));
+
+      item.addEventListener('input', onTelInput(item));
     });
 
     item.addEventListener('blur', function () {

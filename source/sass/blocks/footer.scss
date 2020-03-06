@@ -57,6 +57,8 @@
     font-weight: inherit;
     color: $footer-text-color;
     opacity: 0.5;
+
+    @include interactive;
   }
 }
 

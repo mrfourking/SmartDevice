@@ -308,24 +308,24 @@ template {
   display: none; }
 
 @font-face {
+  font-family: "roboto-condenced";
+  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "roboto-condenced";
+  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
   font-family: "ptmono";
-  src: url("../fonts/ptmono-regular.woff2"), url("../fonts/ptmono-regular.woff");
+  src: url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-  font-display: swap; }
-
-@font-face {
-  font-family: "roboto-condenced";
-  src: url("../fonts/robotocondensed-regular.woff2"), url("../fonts/robotocondensed-regular.woff");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap; }
-
-@font-face {
-  font-family: "roboto-condenced";
-  src: url("../fonts/robotocondensed-bold.woff2"), url("../fonts/robotocondensed-bold.woff");
-  font-style: normal;
-  font-weight: 700;
   font-display: swap; }
 
 html {
@@ -361,14 +361,16 @@ a {
 
 .scroll-hidden {
   overflow: hidden; }
-  .scroll-hidden::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3); }
+
+.scroll-hidden .modal-wrap {
+  overflow: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.5); }
 
 .logo {
   -ms-flex-negative: 0;
@@ -471,10 +473,10 @@ a {
 
 @media (max-width: 1023px) {
   .header {
-    padding: 20px 25px; }
+    padding: 20px 27px 20px 25px; }
   .header__menu-button {
     margin: 0;
-    margin-top: -5px;
+    margin-top: -11px;
     margin-right: 37px; }
   .header__callback-button {
     display: none; } }
@@ -502,12 +504,7 @@ a {
   padding-left: 13%;
   color: #ffffff;
   background-color: #1b2d37;
-  background-image: url("../img/polygon-start-desktop.png"), url("../img/start-bg-desktop.png");
-  background-repeat: no-repeat;
-  background-position: 0 -69px, 0 0; }
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .main {
-      background-image: url("../img/polygon-start-desktop@2x.png"), url("../img/start-bg-desktop@2x.png"); } }
+  background-image: url("../img/start-bg-desktop.jpg"); }
 
 .main__wrap {
   display: -webkit-box;
@@ -863,7 +860,7 @@ a {
   .contacts {
     width: auto;
     margin: 0;
-    margin-top: -4px; }
+    margin-top: -9px; }
   .contacts__item {
     margin-right: 33px; }
     .contacts__item svg {
@@ -937,7 +934,7 @@ a {
 
 @media (max-width: 1023px) {
   .about {
-    padding: 25px 2.6% 83px 27.3%;
+    padding: 25px 3.2% 83px 27.3%;
     background-image: url("../img/about-bg-tablet.png");
     background-position: 0 24px;
     background-size: auto; } }
@@ -1076,8 +1073,9 @@ a {
 .products__image {
   margin-top: -108px; }
   .products__image img {
+    display: block;
     width: 100%;
-    display: block; }
+    opacity: 0.2; }
 
 .products__arrow {
   -ms-flex-item-align: end;
@@ -1174,6 +1172,7 @@ a {
     color: #ffffff;
     background-color: #00b2ff; }
   .callback-form form {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1203,7 +1202,7 @@ a {
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #19baff;
     border: none; }
     .callback-form input[type="text"]:hover,
     .callback-form input[type="tel"]:hover {
@@ -1250,6 +1249,12 @@ a {
     padding: 0;
     clip: rect(0 0 0 0);
     overflow: hidden; }
+  .callback-form input[type="checkbox"] {
+    bottom: 20px;
+    left: 321px; }
+  .callback-form--modal input[type="checkbox"] {
+    bottom: 15px;
+    left: 10px; }
   .callback-form textarea {
     overflow: auto;
     resize: none;
@@ -1260,7 +1265,7 @@ a {
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #19baff;
     border: none; }
     .callback-form textarea:hover {
       background-color: rgba(255, 255, 255, 0.5);
@@ -1310,7 +1315,8 @@ a {
   .callback-form--modal button[type="submit"] {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 34px; }
+    margin-bottom: 34px;
+    outline: none; }
   .callback-form input[type="checkbox"] + label {
     position: relative;
     -ms-flex-item-align: center;
@@ -1333,11 +1339,12 @@ a {
     height: 16px;
     border: 1px solid #ffffff;
     cursor: pointer; }
-  .callback-form input[type="checkbox"] + label:hover::before {
+  .callback-form input[type="checkbox"] + label:hover::before,
+  .callback-form input[type="checkbox"]:focus + label::before {
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-transition: background-color 0.2s ease;
     transition: background-color 0.2s ease; }
-  .callback-form input[type="checkbox"] + label:active::before {
+  .callback-form input[type="checkbox"]:active + label::before {
     background-color: rgba(255, 255, 255, 0.3);
     -webkit-transition: background-color 0.2s ease;
     transition: background-color 0.2s ease; }
@@ -1376,15 +1383,16 @@ a {
   margin: 0;
   padding: 0;
   background-color: transparent;
-  border: none; }
+  border: none;
+  outline: none; }
   .callback-form__button-close:hover {
-    opacity: 0.3;
-    -webkit-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease; }
-  .callback-form__button-close:active {
-    opacity: 0.1;
-    -webkit-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease; }
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; }
+  .callback-form__button-close:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; }
 
 @media (max-width: 1023px) {
   .callback-form {
@@ -1629,6 +1637,14 @@ a {
   font-weight: inherit;
   color: #1b2d37;
   opacity: 0.5; }
+  .footer__phones-item a:hover {
+    opacity: 0.3;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease; }
+  .footer__phones-item a:active {
+    opacity: 0.1;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease; }
 
 .footer__copyright {
   display: -webkit-box;
