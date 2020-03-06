@@ -891,13 +891,13 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 73px 19.8% 110px 28.9%;
-  background-image: url("../img/about-bg-desktop.png");
+  background-image: url("../img/about-bg-desktop.jpg");
   background-repeat: no-repeat;
   background-position: 20.3% 80px;
   background-size: 11.45% auto; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .about {
-      background-image: url("../img/about-bg-desktop@2x.png"); } }
+      background-image: url("../img/about-bg-desktop@2x.jpg"); } }
   .about p {
     width: 100%;
     margin: 0;
@@ -935,12 +935,13 @@ a {
 @media (max-width: 1023px) {
   .about {
     padding: 25px 3.2% 83px 27.3%;
-    background-image: url("../img/about-bg-tablet.png");
+    background-image: url("../img/about-bg-tablet.jpg");
     background-position: 0 24px;
     background-size: auto; } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .about {
-      background-image: url("../img/about-bg-tablet@2x.png"); } }
+      background-image: url("../img/about-bg-tablet@2x.jpg");
+      background-size: 244px; } }
 
 @media (max-width: 1023px) {
   .about__title {

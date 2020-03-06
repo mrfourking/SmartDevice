@@ -4,14 +4,14 @@
   align-items: flex-start;
   padding: 73px 19.8% 110px 28.9%;
 
-  background-image: url("../img/about-bg-desktop.png");
+  background-image: url("../img/about-bg-desktop.jpg");
   background-repeat: no-repeat;
   background-position: 20.3% 80px;
   background-size: 11.45% auto;
 
   @media (min-resolution: $retina-dpi),
     (min-resolution: $retina-dppx) {
-    background-image: url("../img/about-bg-desktop@2x.png");
+    background-image: url("../img/about-bg-desktop@2x.jpg");
   }
 
   p {
@@ -47,13 +47,14 @@
   .about {
     padding: 25px 3.2% 83px 27.3%;
 
-    background-image: url("../img/about-bg-tablet.png");
+    background-image: url("../img/about-bg-tablet.jpg");
     background-position: 0 24px;
     background-size: auto;
 
     @media (min-resolution: $retina-dpi),
       (min-resolution: $retina-dppx) {
-      background-image: url("../img/about-bg-tablet@2x.png");
+      background-image: url("../img/about-bg-tablet@2x.jpg");
+      background-size: 244px;
     }
   }
 
