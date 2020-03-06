@@ -1039,6 +1039,7 @@ a {
       -ms-flex-positive: 1;
           flex-grow: 1;
   width: 30%;
+  max-width: 31.4%;
   margin-right: 30px; }
   .products__item:nth-child(3n) {
     margin-right: 0; }
@@ -1109,6 +1110,7 @@ a {
     padding: 0; }
   .products__item {
     width: 100%;
+    max-width: none;
     margin: 0;
     margin-bottom: 46px; }
     .products__item:last-child {
