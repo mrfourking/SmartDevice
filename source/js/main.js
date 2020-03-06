@@ -44,19 +44,39 @@
   var END_CHARACTER = '..';
 
   var contentBlocks = document.querySelectorAll('.about p');
+  var contents = [];
 
-  if (document.body.clientWidth <= TABLET_WIDTH) {
-    contentBlocks.forEach(function (item) {
-      var content = item.innerText;
+  contentBlocks.forEach(function (item) {
+    contents.push(item.innerText);
+  });
 
-      // window.addEventListener('resize', function (evt) {
+  var onResize = function () {
+    if (document.body.clientWidth <= TABLET_WIDTH) {
+      contentBlocks.forEach(function (item) {
+        var content = item.innerText;
 
-      // });
+        if (content.length > STRING_LENGTH) {
+          item.innerText = content.substr(0, STRING_LENGTH) + END_CHARACTER;
+        }
+      });
+    } else {
+      contentBlocks.forEach(function (item, index) {
+        item.innerText = contents[index];
+      });
+    }
+  };
 
-      if (content.length > STRING_LENGTH) {
-        item.innerText = content.substr(0, STRING_LENGTH) + END_CHARACTER;
-      }
-    });
+  window.addEventListener('resize', resizeThrottler, false);
+
+  var resizeTimeout;
+
+  function resizeThrottler() {
+    if (!resizeTimeout) {
+      resizeTimeout = setTimeout(function () {
+        resizeTimeout = null;
+        onResize();
+      }, 66);
+    }
   }
 })();
 
@@ -156,7 +176,7 @@
     };
   };
 
-  var onTelInput = function (item) {
+  var onTelI = function (item) {
     return function () {
       checkPhoneNumber(item);
     };
@@ -178,7 +198,7 @@
 
       item.addEventListener('keyup', onTelKeydown(item));
 
-      item.addEventListener('input', onTelInput(item));
+      item.addEventListener('input', onTelI(item));
     });
 
     item.addEventListener('blur', function () {
