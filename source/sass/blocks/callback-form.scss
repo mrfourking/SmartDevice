@@ -274,7 +274,8 @@
   .callback-form__title {
     margin-bottom: 17px;
 
-    @include roboto-condenced(400, 32px, 45px);
+    font-size: 32px;
+    line-height: 45px;
   }
 
   .callback-form__intro {
@@ -319,7 +320,8 @@
   .callback-form__title {
     margin-bottom: 14px;
 
-    @include roboto-condenced(400, 28px, 39px);
+    font-size: 28px;
+    line-height: 39px;
   }
 
   .callback-form__intro {

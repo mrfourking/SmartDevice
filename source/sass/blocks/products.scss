@@ -88,7 +88,8 @@
     margin-right: 105px;
     margin-bottom: 51px;
 
-    @include roboto-condenced(400, 32px, 45px);
+    font-size: 32px;
+    line-height: 45px;
   }
 
   .products__list {
@@ -137,6 +138,8 @@
     margin-left: 10px;
 
     @include roboto-condenced(400, 28px, 39px);
+    font-size: 28px;
+    line-height: 39px;
   }
 
   .products__item {

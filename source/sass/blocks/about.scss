@@ -56,19 +56,20 @@
       background-image: url("../img/about-bg-tablet@2x.jpg");
       background-size: 244px;
     }
+
+    p {
+      margin-left: 3px;
+
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 
   .about__title {
     margin-bottom: 26px;
 
-    @include roboto-condenced(400, 32px, 45px);
-  }
-
-  .about p{
-    margin-left: 3px;
-
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 32px;
+    line-height: 45px;
   }
 
   .about__button {
@@ -86,7 +87,8 @@
   .about__title {
     margin-bottom: 21px;
 
-    @include roboto-condenced(400, 28px, 39px);
+    font-size: 28px;
+    line-height: 39px;
   }
 
   .about p {
