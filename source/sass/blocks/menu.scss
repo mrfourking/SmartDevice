@@ -2,6 +2,7 @@
   @include reset-list;
 
   display: inline-block;
+  vertical-align: middle;
   columns: 230px 2;
   column-gap: 75px;
 }

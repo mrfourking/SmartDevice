@@ -1217,6 +1217,7 @@ a {
   padding: 0;
   list-style: none;
   display: inline-block;
+  vertical-align: middle;
   -webkit-columns: 230px 2;
      -moz-columns: 230px 2;
           columns: 230px 2;
