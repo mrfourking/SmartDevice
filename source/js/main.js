@@ -92,40 +92,43 @@
   var BACKSPACE_KEYCODE = 8;
   var ERROR_MESSAGE = 'Номер телефона не соответствует формату +7(ХХХ)ХХХ-ХХ-ХХ';
 
-  var phoneInputs = document.querySelectorAll('input[type="tel"');
+  var phoneInputs = document.querySelectorAll('input[type="tel"]');
 
   var checkPhoneNumber = function (item) {
     var startIndex = 0;
     var longNumber = 3;
     var shortNumber = 2;
-    if (item.value.substr(startIndex, START_SYMBOLS.length) !== START_SYMBOLS) {
+    var phoneNumber = item.value;
+
+    if (phoneNumber.substr(startIndex, START_SYMBOLS.length) !== START_SYMBOLS) {
       item.setCustomValidity(ERROR_MESSAGE);
     } else {
       startIndex += START_SYMBOLS.length;
-      if (isNaN(Number(item.value.substr(startIndex, longNumber)))) {
+      if (isNaN(Number(phoneNumber.substr(startIndex, longNumber)))) {
         item.setCustomValidity(ERROR_MESSAGE);
       } else {
         startIndex += longNumber;
-        if (item.value.substr(startIndex, 1) !== CLOSE_SYMBOL) {
+        if (phoneNumber.substr(startIndex, 1) !== CLOSE_SYMBOL) {
           item.setCustomValidity(ERROR_MESSAGE);
         } else {
           startIndex += CLOSE_SYMBOL.length;
-          if (isNaN(Number(item.value.substr(startIndex, longNumber)))) {
+          if (isNaN(Number(phoneNumber.substr(startIndex, longNumber)))) {
             item.setCustomValidity(ERROR_MESSAGE);
           } else {
             startIndex += longNumber;
-            if (item.value.substr(startIndex, 1) !== SEPARATOR) {
+            if (phoneNumber.substr(startIndex, 1) !== SEPARATOR) {
               item.setCustomValidity(ERROR_MESSAGE);
             } else {
               startIndex += SEPARATOR.length;
-              if (isNaN(Number(item.value.substr(startIndex, shortNumber)))) {
+              if (isNaN(Number(phoneNumber.substr(startIndex, shortNumber)))) {
                 item.setCustomValidity(ERROR_MESSAGE);
               } else {
                 startIndex += shortNumber;
-                if (item.value.substr(startIndex, 1) !== SEPARATOR) {
+                if (phoneNumber.substr(startIndex, 1) !== SEPARATOR) {
                   item.setCustomValidity(ERROR_MESSAGE);
                 } else {
-                  if (isNaN(Number(item.value.substr(startIndex, shortNumber)))) {
+                  startIndex += SEPARATOR.length;
+                  if (isNaN(Number(phoneNumber.substr(startIndex, shortNumber))) || phoneNumber.substr(startIndex, shortNumber).length < shortNumber) {
                     item.setCustomValidity(ERROR_MESSAGE);
                   } else {
                     item.setCustomValidity('');
@@ -176,7 +179,7 @@
     };
   };
 
-  var onTelI = function (item) {
+  var onTelInput = function (item) {
     return function () {
       checkPhoneNumber(item);
     };
@@ -198,7 +201,7 @@
 
       item.addEventListener('keyup', onTelKeydown(item));
 
-      item.addEventListener('input', onTelI(item));
+      item.addEventListener('input', onTelInput(item));
     });
 
     item.addEventListener('blur', function () {
@@ -209,6 +212,10 @@
       item.removeEventListener('keyup', onTelKeydown(item));
     });
   });
+
+  window.inputMask = {
+    checkPhoneNumber: checkPhoneNumber
+  };
 })();
 
 /**
@@ -286,6 +293,7 @@
   });
 
   modal.addEventListener('submit', function () {
+    window.inputMask.checkPhoneNumber(userPhone);
     onModalButtonsClick();
   });
 
