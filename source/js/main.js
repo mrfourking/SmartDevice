@@ -89,7 +89,6 @@
   var SEPARATOR = '-';
   var MIN_LENGTH = 4;
   var MAX_LENGTH = 16;
-  var BACKSPACE_KEYCODE = 8;
   var ERROR_MESSAGE = 'Номер телефона не соответствует формату +7(ХХХ)ХХХ-ХХ-ХХ';
 
   var phoneInputs = document.querySelectorAll('input[type="tel"]');
@@ -142,7 +141,7 @@
     }
   };
 
-  var setValue = function (item, evt) {
+  var setValue = function (item) {
     if (item.value.length < MAX_LENGTH) {
       switch (item.value.length) {
         case 0:
@@ -158,29 +157,22 @@
         case 13:
           item.value += SEPARATOR;
           break;
-        default:
-          if (/[\d]/g.test(evt.key)) {
-            item.value += evt.key;
-          }
       }
     }
   };
 
-  var onTelKeydown = function (item) {
+  var onTelInput = function (item) {
     return function (evt) {
-      if (item.value.length < MIN_LENGTH && evt.keyCode === BACKSPACE_KEYCODE) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      if (item.value.length < MIN_LENGTH && evt.data === null) {
         item.value = START_SYMBOLS;
       }
-      if (/[\d]/g.test(evt.key)) {
-        setValue(item, evt.key);
+      if (/[\d]/g.test(evt.data)) {
+        setValue(item);
       } else {
         item.value = item.value.replace(/[^0-9\+\(\-)]/, '');
       }
-    };
-  };
-
-  var onTelInput = function (item) {
-    return function () {
       checkPhoneNumber(item);
     };
   };
@@ -189,18 +181,6 @@
     item.addEventListener('focus', function () {
       setValue(item);
 
-      item.addEventListener('keydown', function (evt) {
-        evt.stopImmediatePropagation();
-        return false;
-      });
-
-      item.addEventListener('keypress', function (evt) {
-        evt.stopImmediatePropagation();
-        return false;
-      });
-
-      item.addEventListener('keyup', onTelKeydown(item));
-
       item.addEventListener('input', onTelInput(item));
     });
 
@@ -208,8 +188,6 @@
       if (item.value.length <= START_SYMBOLS.length) {
         item.value = '';
       }
-
-      item.removeEventListener('keyup', onTelKeydown(item));
     });
   });
 
