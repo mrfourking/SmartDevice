@@ -5,15 +5,11 @@
   justify-content: flex-start;
   padding-top: 258px;
   padding-left: 13%;
+  // padding-right: 13%;
 
   color: $dark-text-color;
 
   background-color: $dark-bg-color;
-  // background-image:
-  //   url("../img/polygon-start-desktop.png"),
-  //   url("../img/start-bg-desktop.png");
-  // background-repeat: no-repeat;
-  // background-position: 0 -69px, 0 0;
   background-image: url("../img/start-bg-desktop.jpg");
 
   @media (min-resolution: $retina-dpi),
@@ -29,10 +25,11 @@
   align-items: flex-start;
   width: 45%;
   margin-right: 37px;
-  padding-top: 55px;
+  padding-top: 56px;
 }
 
 .main__title {
+  width: 100%;
   margin: 0;
   margin-bottom: 29px;
 
@@ -43,6 +40,7 @@
 
 .main__intro {
   position: relative;
+  width: 100%;
   margin: 0;
   margin-bottom: 45px;
   padding-left: 97px;
@@ -64,9 +62,10 @@
 }
 
 .main__button {
+  width: 407px;
   margin-left: 97px;
   margin-bottom: 133px;
-  padding: 18px 45px;
+  padding: 18px;
 
   @include roboto-condenced(700, 16px, 19px);
   text-transform: uppercase;
@@ -86,7 +85,7 @@
 
 .main__link {
   margin-bottom: 127px;
-  margin-left: -36px;
+  margin-left: -35px;
 
   font-size: 14px;
   line-height: 16px;
@@ -95,6 +94,11 @@
   transform: rotate(-90deg);
 
   @include interactive;
+}
+
+.main__image {
+  width: 50%;
+  flex-shrink: 1;
 }
 
 @media (max-width: $tablet-width) {
@@ -106,7 +110,7 @@
     background-position: -372px -30px;
 
     @media (min-resolution: $retina-dpi),
-    (min-resolution: $retina-dppx) {
+      (min-resolution: $retina-dppx) {
       background-image: url("../img/start-bg-tablet@2x.jpg");
       background-size: 1514px auto;
     }
@@ -115,6 +119,7 @@
   .main__wrap {
     flex-shrink: 0;
     width: 63%;
+    max-width: 430px;
     margin-right: -8px;
     padding-top: 74px;
   }
@@ -138,9 +143,10 @@
   }
 
   .main__button {
+    width: 379px;
     margin-left: 51px;
     margin-bottom: 164px;
-    padding: 17px 31px 19px;
+    padding: 17px 17px 19px;
   }
 
   .main__link {
@@ -155,24 +161,26 @@
 
 @media (max-width: $mobile-width) {
   .main {
+    width: 100%;
     flex-direction: column;
     align-items: center;
     padding-top: 91px;
     padding-left: 4.7%;
+    padding-right: 4.7%;
 
     background-image: url("../img/start-bg-mobile.jpg");
     background-repeat: no-repeat;
     background-position: -624px -13px;
 
     @media (min-resolution: $retina-dpi),
-    (min-resolution: $retina-dppx) {
+      (min-resolution: $retina-dppx) {
       background-image: url("../img/start-bg-mobile@2x.jpg");
       background-size: 1447px auto;
     }
   }
 
   .main__wrap {
-    width: auto;
+    width: 100%;
     margin: -29px auto 0;
     padding: 0;
   }
@@ -197,10 +205,12 @@
   }
 
   .main__button {
+    align-self: center;
+    width: 287px;
     margin: 0;
     margin-bottom: 71px;
     margin-left: 2px;
-    padding: 17px 32px 19px 33px;
+    padding: 17px 11px 19px;
 
     span:first-child {
       display: none;
@@ -218,6 +228,6 @@
   .main__image {
     order: -1;
     width: 301px;
-    margin-left: 19px;
+    margin-left: 33px;
   }
 }
