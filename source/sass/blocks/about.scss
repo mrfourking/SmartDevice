@@ -1,17 +1,16 @@
 .about {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 73px 19.8% 110px 28.9%;
+
+  padding: 73px 19.8% 110px;
 
   background-image: url("../img/about-bg-desktop.jpg");
   background-repeat: no-repeat;
   background-position: 20.3% 80px;
-  background-size: 11.45% auto;
+  //background-size: 11.45% auto;
 
   @media (min-resolution: $retina-dpi),
     (min-resolution: $retina-dppx) {
     background-image: url("../img/about-bg-desktop@2x.jpg");
+    background-size: 11.45% auto;
   }
 
   p {
@@ -21,15 +20,22 @@
   }
 }
 
+.about__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 175px;
+}
+
 .about__title {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
 
   @include roboto-condenced(400, 36px, 51px);
 }
 
 .about__button {
-  margin-top: 19px;
+  margin-top: 18px;
   padding: 14px 50px 13px;
 
   @include roboto-condenced(700, 14px, 16px);
@@ -63,6 +69,10 @@
       font-size: 16px;
       line-height: 22px;
     }
+  }
+
+  .about__wrap {
+    margin: 0;
   }
 
   .about__title {
