@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 90px 3.2% 127px;
+  padding: 90px 3.2% 128px;
 
   color: $dark-text-color;
 
@@ -12,7 +12,7 @@
 .products__intro {
   margin: 0;
   margin-right: 19.7%;
-  margin-bottom: 36px;
+  margin-bottom: 33px;
 
   @include roboto-condenced(400, 36px, 51px);
 }
@@ -32,7 +32,7 @@
 .products__item {
   flex-grow: 1;
   width: 30%;
-  max-width: 31.4%;
+  max-width: 31.6%;
   margin-right: 30px;
 
   &:nth-child(3n) {
@@ -52,13 +52,13 @@
 .products__item-title {
   z-index: 1;
   width: 151px;
-  margin: 67px 0 0 44px;
+  margin: 69px 0 0 44px;
 
   @include roboto-condenced(400, 20px, 30px);
 }
 
 .products__image {
-  margin-top: -108px;
+  margin-top: -109px;
 
   img {
     display: block;
